@@ -1,0 +1,368 @@
+{
+  "id": "Q-11",
+  "question": "Of Redfen, Ashgrove and Millbrook, which district has the fewest pupils per school in 2025/26, and how many pupils per school separate the highest of the three from the lowest?",
+  "expected": {
+    "answer": "Redfen",
+    "value": 56.1,
+    "decimals": 2
+  },
+  "answer": {
+    "name": "redfen",
+    "number": 53.508
+  },
+  "correct": false,
+  "unanswered": false,
+  "hit_round_limit": false,
+  "seconds": 4.905,
+  "usage": {
+    "calls": 3,
+    "input_tokens": 3043,
+    "cached_tokens": 1151,
+    "output_tokens": 297,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.000758
+  },
+  "final_text": "Redfen has the fewest pupils per school. The difference between the highest and lowest is 53.508 pupils per school.\n\nANSWER: Redfen | 53.508",
+  "trace": {
+    "rounds": [
+      {
+        "round": 1,
+        "tool_calls": 6,
+        "usage": {
+          "calls": 1,
+          "input_tokens": 542,
+          "cached_tokens": 0,
+          "output_tokens": 165,
+          "reasoning_tokens": 0,
+          "cost_usd": 0.000306
+        },
+        "model_seconds": 2.029
+      },
+      {
+        "round": 2,
+        "tool_calls": 4,
+        "usage": {
+          "calls": 1,
+          "input_tokens": 1154,
+          "cached_tokens": 0,
+          "output_tokens": 94,
+          "reasoning_tokens": 0,
+          "cost_usd": 0.000344
+        },
+        "model_seconds": 1.628
+      },
+      {
+        "round": 3,
+        "tool_calls": 0,
+        "usage": {
+          "calls": 1,
+          "input_tokens": 1347,
+          "cached_tokens": 1151,
+          "output_tokens": 38,
+          "reasoning_tokens": 0,
+          "cost_usd": 0.000108
+        },
+        "model_seconds": 1.246
+      }
+    ],
+    "tool_calls": [
+      {
+        "round": 1,
+        "id": "call_GTQyVaXMPXb2oi2SNQd0XpWb",
+        "name": "lookup",
+        "arguments": "{\"district\": \"Redfen\", \"field\": \"pupils\", \"year\": 2025}",
+        "result": {
+          "district": "Redfen",
+          "field": "pupils",
+          "year": 2025,
+          "value": 3147,
+          "unit": "pupils",
+          "source": "NR-09",
+          "evidence": "The district runs 10 schools with 3,147 pupils enrolled in the 2025/26 school year."
+        },
+        "seconds": 0.000445
+      },
+      {
+        "round": 1,
+        "id": "call_xmWpujwPB4hBDJxRkVEtLo2C",
+        "name": "lookup",
+        "arguments": "{\"district\": \"Redfen\", \"field\": \"schools\", \"year\": 2025}",
+        "result": {
+          "district": "Redfen",
+          "field": "schools",
+          "year": 2025,
+          "value": 10,
+          "unit": "schools",
+          "source": "NR-09",
+          "evidence": "The district runs 10 schools with 3,147 pupils enrolled in the 2025/26 school year."
+        },
+        "seconds": 0.000233
+      },
+      {
+        "round": 1,
+        "id": "call_r2epkhyGoMqGvVrwk0SSwbzG",
+        "name": "lookup",
+        "arguments": "{\"district\": \"Ashgrove\", \"field\": \"pupils\", \"year\": 2025}",
+        "result": {
+          "district": "Ashgrove",
+          "field": "pupils",
+          "year": 2025,
+          "value": 8837,
+          "unit": "pupils",
+          "source": "NR-10",
+          "evidence": "There are 24 schools in the district, attended by 8,837 pupils in 2025/26."
+        },
+        "seconds": 0.000141
+      },
+      {
+        "round": 1,
+        "id": "call_EvV8cPkRUdiLHvGho4RJ5YgY",
+        "name": "lookup",
+        "arguments": "{\"district\": \"Ashgrove\", \"field\": \"schools\", \"year\": 2025}",
+        "result": {
+          "district": "Ashgrove",
+          "field": "schools",
+          "year": 2025,
+          "value": 24,
+          "unit": "schools",
+          "source": "NR-10",
+          "evidence": "There are 24 schools in the district, attended by 8,837 pupils in 2025/26."
+        },
+        "seconds": 0.00027
+      },
+      {
+        "round": 1,
+        "id": "call_oQ3KQ0a1wJIVEAyR7YycxDGc",
+        "name": "lookup",
+        "arguments": "{\"district\": \"Millbrook\", \"field\": \"pupils\", \"year\": 2025}",
+        "result": {
+          "district": "Millbrook",
+          "field": "pupils",
+          "year": 2025,
+          "value": 5562,
+          "unit": "pupils",
+          "source": "NR-11",
+          "evidence": "Millbrook has 15 schools, which enrolled 5,562 pupils for the 2025/26 school year."
+        },
+        "seconds": 0.000165
+      },
+      {
+        "round": 1,
+        "id": "call_74U3ZiO9UQuirbOc4X0px17p",
+        "name": "lookup",
+        "arguments": "{\"district\": \"Millbrook\", \"field\": \"schools\", \"year\": 2025}",
+        "result": {
+          "district": "Millbrook",
+          "field": "schools",
+          "year": 2025,
+          "value": 15,
+          "unit": "schools",
+          "source": "NR-11",
+          "evidence": "Millbrook has 15 schools, which enrolled 5,562 pupils for the 2025/26 school year."
+        },
+        "seconds": 0.000156
+      },
+      {
+        "round": 2,
+        "id": "call_Ga5EIoaLmJ4Cg2AN99usQAXQ",
+        "name": "calculate",
+        "arguments": "{\"expression\": \"3147 / 10\"}",
+        "result": {
+          "expression": "3147 / 10",
+          "result": 314.7
+        },
+        "seconds": 0.000153
+      },
+      {
+        "round": 2,
+        "id": "call_kqi8tVRBpgEnc5mTNUEVzsvZ",
+        "name": "calculate",
+        "arguments": "{\"expression\": \"8837 / 24\"}",
+        "result": {
+          "expression": "8837 / 24",
+          "result": 368.2083333333
+        },
+        "seconds": 4.2e-05
+      },
+      {
+        "round": 2,
+        "id": "call_MfXMBUXm6Voo3qfSaJ99p1qo",
+        "name": "calculate",
+        "arguments": "{\"expression\": \"5562 / 15\"}",
+        "result": {
+          "expression": "5562 / 15",
+          "result": 370.8
+        },
+        "seconds": 3.7e-05
+      },
+      {
+        "round": 2,
+        "id": "call_VsdIzxlrarVBhsUCtDg0Zk9I",
+        "name": "calculate",
+        "arguments": "{\"expression\": \"8837 / 24 - 3147 / 10\"}",
+        "result": {
+          "expression": "8837 / 24 - 3147 / 10",
+          "result": 53.5083333333
+        },
+        "seconds": 5.6e-05
+      }
+    ],
+    "messages": [
+      {
+        "role": "system",
+        "content": "You answer questions about the Nine Rivers Region, a fictional region. Use only the information you are given.\n\nYou do not have the documents. Use the lookup tool to get every fact and the calculate tool for every calculation.\n\nEnd your reply with exactly one line in this format:\nANSWER: <district name or yes/no> | <number>\nUse only the district name, or yes/no for a yes/no question. Write the number without units or thousands separators, with at least 3 decimal places unless it is a whole count."
+      },
+      {
+        "role": "user",
+        "content": "Of Redfen, Ashgrove and Millbrook, which district has the fewest pupils per school in 2025/26, and how many pupils per school separate the highest of the three from the lowest?"
+      },
+      {
+        "role": "assistant",
+        "annotations": [],
+        "tool_calls": [
+          {
+            "id": "call_GTQyVaXMPXb2oi2SNQd0XpWb",
+            "function": {
+              "arguments": "{\"district\": \"Redfen\", \"field\": \"pupils\", \"year\": 2025}",
+              "name": "lookup"
+            },
+            "type": "function"
+          },
+          {
+            "id": "call_xmWpujwPB4hBDJxRkVEtLo2C",
+            "function": {
+              "arguments": "{\"district\": \"Redfen\", \"field\": \"schools\", \"year\": 2025}",
+              "name": "lookup"
+            },
+            "type": "function"
+          },
+          {
+            "id": "call_r2epkhyGoMqGvVrwk0SSwbzG",
+            "function": {
+              "arguments": "{\"district\": \"Ashgrove\", \"field\": \"pupils\", \"year\": 2025}",
+              "name": "lookup"
+            },
+            "type": "function"
+          },
+          {
+            "id": "call_EvV8cPkRUdiLHvGho4RJ5YgY",
+            "function": {
+              "arguments": "{\"district\": \"Ashgrove\", \"field\": \"schools\", \"year\": 2025}",
+              "name": "lookup"
+            },
+            "type": "function"
+          },
+          {
+            "id": "call_oQ3KQ0a1wJIVEAyR7YycxDGc",
+            "function": {
+              "arguments": "{\"district\": \"Millbrook\", \"field\": \"pupils\", \"year\": 2025}",
+              "name": "lookup"
+            },
+            "type": "function"
+          },
+          {
+            "id": "call_74U3ZiO9UQuirbOc4X0px17p",
+            "function": {
+              "arguments": "{\"district\": \"Millbrook\", \"field\": \"schools\", \"year\": 2025}",
+              "name": "lookup"
+            },
+            "type": "function"
+          }
+        ]
+      },
+      {
+        "role": "tool",
+        "tool_call_id": "call_GTQyVaXMPXb2oi2SNQd0XpWb",
+        "content": "{\"district\": \"Redfen\", \"field\": \"pupils\", \"year\": 2025, \"value\": 3147, \"unit\": \"pupils\", \"source\": \"NR-09\", \"evidence\": \"The district runs 10 schools with 3,147 pupils enrolled in the 2025/26 school year.\"}"
+      },
+      {
+        "role": "tool",
+        "tool_call_id": "call_xmWpujwPB4hBDJxRkVEtLo2C",
+        "content": "{\"district\": \"Redfen\", \"field\": \"schools\", \"year\": 2025, \"value\": 10, \"unit\": \"schools\", \"source\": \"NR-09\", \"evidence\": \"The district runs 10 schools with 3,147 pupils enrolled in the 2025/26 school year.\"}"
+      },
+      {
+        "role": "tool",
+        "tool_call_id": "call_r2epkhyGoMqGvVrwk0SSwbzG",
+        "content": "{\"district\": \"Ashgrove\", \"field\": \"pupils\", \"year\": 2025, \"value\": 8837, \"unit\": \"pupils\", \"source\": \"NR-10\", \"evidence\": \"There are 24 schools in the district, attended by 8,837 pupils in 2025/26.\"}"
+      },
+      {
+        "role": "tool",
+        "tool_call_id": "call_EvV8cPkRUdiLHvGho4RJ5YgY",
+        "content": "{\"district\": \"Ashgrove\", \"field\": \"schools\", \"year\": 2025, \"value\": 24, \"unit\": \"schools\", \"source\": \"NR-10\", \"evidence\": \"There are 24 schools in the district, attended by 8,837 pupils in 2025/26.\"}"
+      },
+      {
+        "role": "tool",
+        "tool_call_id": "call_oQ3KQ0a1wJIVEAyR7YycxDGc",
+        "content": "{\"district\": \"Millbrook\", \"field\": \"pupils\", \"year\": 2025, \"value\": 5562, \"unit\": \"pupils\", \"source\": \"NR-11\", \"evidence\": \"Millbrook has 15 schools, which enrolled 5,562 pupils for the 2025/26 school year.\"}"
+      },
+      {
+        "role": "tool",
+        "tool_call_id": "call_74U3ZiO9UQuirbOc4X0px17p",
+        "content": "{\"district\": \"Millbrook\", \"field\": \"schools\", \"year\": 2025, \"value\": 15, \"unit\": \"schools\", \"source\": \"NR-11\", \"evidence\": \"Millbrook has 15 schools, which enrolled 5,562 pupils for the 2025/26 school year.\"}"
+      },
+      {
+        "role": "assistant",
+        "annotations": [],
+        "tool_calls": [
+          {
+            "id": "call_Ga5EIoaLmJ4Cg2AN99usQAXQ",
+            "function": {
+              "arguments": "{\"expression\": \"3147 / 10\"}",
+              "name": "calculate"
+            },
+            "type": "function"
+          },
+          {
+            "id": "call_kqi8tVRBpgEnc5mTNUEVzsvZ",
+            "function": {
+              "arguments": "{\"expression\": \"8837 / 24\"}",
+              "name": "calculate"
+            },
+            "type": "function"
+          },
+          {
+            "id": "call_MfXMBUXm6Voo3qfSaJ99p1qo",
+            "function": {
+              "arguments": "{\"expression\": \"5562 / 15\"}",
+              "name": "calculate"
+            },
+            "type": "function"
+          },
+          {
+            "id": "call_VsdIzxlrarVBhsUCtDg0Zk9I",
+            "function": {
+              "arguments": "{\"expression\": \"8837 / 24 - 3147 / 10\"}",
+              "name": "calculate"
+            },
+            "type": "function"
+          }
+        ]
+      },
+      {
+        "role": "tool",
+        "tool_call_id": "call_Ga5EIoaLmJ4Cg2AN99usQAXQ",
+        "content": "{\"expression\": \"3147 / 10\", \"result\": 314.7}"
+      },
+      {
+        "role": "tool",
+        "tool_call_id": "call_kqi8tVRBpgEnc5mTNUEVzsvZ",
+        "content": "{\"expression\": \"8837 / 24\", \"result\": 368.2083333333}"
+      },
+      {
+        "role": "tool",
+        "tool_call_id": "call_MfXMBUXm6Voo3qfSaJ99p1qo",
+        "content": "{\"expression\": \"5562 / 15\", \"result\": 370.8}"
+      },
+      {
+        "role": "tool",
+        "tool_call_id": "call_VsdIzxlrarVBhsUCtDg0Zk9I",
+        "content": "{\"expression\": \"8837 / 24 - 3147 / 10\", \"result\": 53.5083333333}"
+      },
+      {
+        "content": "Redfen has the fewest pupils per school. The difference between the highest and lowest is 53.508 pupils per school.\n\nANSWER: Redfen | 53.508",
+        "role": "assistant",
+        "annotations": []
+      }
+    ]
+  }
+}

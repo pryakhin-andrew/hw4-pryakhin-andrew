@@ -1,0 +1,268 @@
+{
+  "id": "Q-08",
+  "question": "At the 2025 household water tariff, whose households paid more for water in 2025, Brightwater's or Millbrook's, and by how many million tenge?",
+  "expected": {
+    "answer": "Brightwater",
+    "value": 72.46,
+    "decimals": 2
+  },
+  "answer": {
+    "name": "brightwater",
+    "number": 72.456
+  },
+  "correct": true,
+  "unanswered": false,
+  "hit_round_limit": false,
+  "seconds": 4.516,
+  "usage": {
+    "calls": 3,
+    "input_tokens": 3246,
+    "cached_tokens": 1250,
+    "output_tokens": 215,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.000682
+  },
+  "final_text": "Brightwater households paid more, by 72.456 million tenge.\n\nANSWER: Brightwater | 72.456",
+  "trace": {
+    "rounds": [
+      {
+        "round": 1,
+        "tool_calls": 5,
+        "usage": {
+          "calls": 1,
+          "input_tokens": 658,
+          "cached_tokens": 0,
+          "output_tokens": 151,
+          "reasoning_tokens": 0,
+          "cost_usd": 0.000313
+        },
+        "model_seconds": 1.896
+      },
+      {
+        "round": 2,
+        "tool_calls": 1,
+        "usage": {
+          "calls": 1,
+          "input_tokens": 1253,
+          "cached_tokens": 0,
+          "output_tokens": 37,
+          "reasoning_tokens": 0,
+          "cost_usd": 0.000295
+        },
+        "model_seconds": 1.364
+      },
+      {
+        "round": 3,
+        "tool_calls": 0,
+        "usage": {
+          "calls": 1,
+          "input_tokens": 1335,
+          "cached_tokens": 1250,
+          "output_tokens": 27,
+          "reasoning_tokens": 0,
+          "cost_usd": 7.4e-05
+        },
+        "model_seconds": 1.254
+      }
+    ],
+    "tool_calls": [
+      {
+        "round": 1,
+        "id": "call_ha68vRoqGaUloMzdLtp6MjaV",
+        "name": "lookup",
+        "arguments": "{\"district\": \"Brightwater\", \"field\": \"population\", \"year\": 2025}",
+        "result": {
+          "district": "Brightwater",
+          "field": "population",
+          "year": 2025,
+          "value": 44675,
+          "unit": "residents",
+          "source": "NR-05",
+          "evidence": "Census population: 39,902 in 2020 and 44,675 in 2025."
+        },
+        "seconds": 0.000262
+      },
+      {
+        "round": 1,
+        "id": "call_FJjn3WVfWGi0tgCrlqSpOxFu",
+        "name": "lookup",
+        "arguments": "{\"district\": \"Millbrook\", \"field\": \"population\", \"year\": 2025}",
+        "result": {
+          "district": "Millbrook",
+          "field": "population",
+          "year": 2025,
+          "value": 37203,
+          "unit": "residents",
+          "source": "NR-11",
+          "evidence": "Census population: 34,590 in 2020 and 37,203 in 2025."
+        },
+        "seconds": 0.000128
+      },
+      {
+        "round": 1,
+        "id": "call_U6PBdtQnlLgVY5gPT2Fvvp0e",
+        "name": "lookup",
+        "arguments": "{\"district\": \"Brightwater\", \"field\": \"water_use_megalitres\", \"year\": 2025}",
+        "result": {
+          "district": "Brightwater",
+          "field": "water_use_megalitres",
+          "year": 2025,
+          "value": 3315,
+          "unit": "megalitres",
+          "source": "NR-05",
+          "evidence": "Households used 3,315 megalitres of water during 2025, and the district's 2025 budget amounted to 7,733.9 million tenge."
+        },
+        "seconds": 0.000319
+      },
+      {
+        "round": 1,
+        "id": "call_r3r2wxZ3IDg0lYhmiCpw8Rx6",
+        "name": "lookup",
+        "arguments": "{\"district\": \"Millbrook\", \"field\": \"water_use_megalitres\", \"year\": 2025}",
+        "result": {
+          "district": "Millbrook",
+          "field": "water_use_megalitres",
+          "year": 2025,
+          "value": 2806,
+          "unit": "megalitres",
+          "source": "NR-11",
+          "evidence": "Households used 2,806 megalitres of water during 2025, and the district's 2025 budget amounted to 6,305.7 million tenge."
+        },
+        "seconds": 0.000164
+      },
+      {
+        "round": 1,
+        "id": "call_T60uyaPb9o1GGgEbkEVom3Ua",
+        "name": "lookup",
+        "arguments": "{\"district\": \"Brightwater\", \"field\": \"water_tariff_tenge_per_m3\", \"year\": 2025}",
+        "result": {
+          "district": "Brightwater",
+          "field": "water_tariff_tenge_per_m3",
+          "year": 2025,
+          "value": 142.35,
+          "unit": "tenge per m3",
+          "source": "NR-15",
+          "evidence": "From 1 January 2025 the regional household water tariff is 142.35 tenge per cubic metre, in every district.",
+          "note": "The tariff is the same in every district (NR-15)."
+        },
+        "seconds": 0.000733
+      },
+      {
+        "round": 2,
+        "id": "call_r8wwqNkiLlVnSdkqMFrVjNBy",
+        "name": "calculate",
+        "arguments": "{\"expression\":\"(3315 - 2806) * 1000 * 142.35 / 1000000\"}",
+        "result": {
+          "expression": "(3315 - 2806) * 1000 * 142.35 / 1000000",
+          "result": 72.45615
+        },
+        "seconds": 0.000143
+      }
+    ],
+    "messages": [
+      {
+        "role": "system",
+        "content": "You answer questions about the Nine Rivers Region, a fictional region. Use only the information you are given.\n\nYou do not have the documents. Use the lookup tool to get every fact and the calculate tool for every calculation.\n\nEnd your reply with exactly one line in this format:\nANSWER: <district name or yes/no> | <number>\nUse only the district name, or yes/no for a yes/no question. Write the number without units or thousands separators, with at least 3 decimal places unless it is a whole count."
+      },
+      {
+        "role": "user",
+        "content": "At the 2025 household water tariff, whose households paid more for water in 2025, Brightwater's or Millbrook's, and by how many million tenge?"
+      },
+      {
+        "role": "assistant",
+        "annotations": [],
+        "tool_calls": [
+          {
+            "id": "call_ha68vRoqGaUloMzdLtp6MjaV",
+            "function": {
+              "arguments": "{\"district\": \"Brightwater\", \"field\": \"population\", \"year\": 2025}",
+              "name": "lookup"
+            },
+            "type": "function"
+          },
+          {
+            "id": "call_FJjn3WVfWGi0tgCrlqSpOxFu",
+            "function": {
+              "arguments": "{\"district\": \"Millbrook\", \"field\": \"population\", \"year\": 2025}",
+              "name": "lookup"
+            },
+            "type": "function"
+          },
+          {
+            "id": "call_U6PBdtQnlLgVY5gPT2Fvvp0e",
+            "function": {
+              "arguments": "{\"district\": \"Brightwater\", \"field\": \"water_use_megalitres\", \"year\": 2025}",
+              "name": "lookup"
+            },
+            "type": "function"
+          },
+          {
+            "id": "call_r3r2wxZ3IDg0lYhmiCpw8Rx6",
+            "function": {
+              "arguments": "{\"district\": \"Millbrook\", \"field\": \"water_use_megalitres\", \"year\": 2025}",
+              "name": "lookup"
+            },
+            "type": "function"
+          },
+          {
+            "id": "call_T60uyaPb9o1GGgEbkEVom3Ua",
+            "function": {
+              "arguments": "{\"district\": \"Brightwater\", \"field\": \"water_tariff_tenge_per_m3\", \"year\": 2025}",
+              "name": "lookup"
+            },
+            "type": "function"
+          }
+        ]
+      },
+      {
+        "role": "tool",
+        "tool_call_id": "call_ha68vRoqGaUloMzdLtp6MjaV",
+        "content": "{\"district\": \"Brightwater\", \"field\": \"population\", \"year\": 2025, \"value\": 44675, \"unit\": \"residents\", \"source\": \"NR-05\", \"evidence\": \"Census population: 39,902 in 2020 and 44,675 in 2025.\"}"
+      },
+      {
+        "role": "tool",
+        "tool_call_id": "call_FJjn3WVfWGi0tgCrlqSpOxFu",
+        "content": "{\"district\": \"Millbrook\", \"field\": \"population\", \"year\": 2025, \"value\": 37203, \"unit\": \"residents\", \"source\": \"NR-11\", \"evidence\": \"Census population: 34,590 in 2020 and 37,203 in 2025.\"}"
+      },
+      {
+        "role": "tool",
+        "tool_call_id": "call_U6PBdtQnlLgVY5gPT2Fvvp0e",
+        "content": "{\"district\": \"Brightwater\", \"field\": \"water_use_megalitres\", \"year\": 2025, \"value\": 3315, \"unit\": \"megalitres\", \"source\": \"NR-05\", \"evidence\": \"Households used 3,315 megalitres of water during 2025, and the district's 2025 budget amounted to 7,733.9 million tenge.\"}"
+      },
+      {
+        "role": "tool",
+        "tool_call_id": "call_r3r2wxZ3IDg0lYhmiCpw8Rx6",
+        "content": "{\"district\": \"Millbrook\", \"field\": \"water_use_megalitres\", \"year\": 2025, \"value\": 2806, \"unit\": \"megalitres\", \"source\": \"NR-11\", \"evidence\": \"Households used 2,806 megalitres of water during 2025, and the district's 2025 budget amounted to 6,305.7 million tenge.\"}"
+      },
+      {
+        "role": "tool",
+        "tool_call_id": "call_T60uyaPb9o1GGgEbkEVom3Ua",
+        "content": "{\"district\": \"Brightwater\", \"field\": \"water_tariff_tenge_per_m3\", \"year\": 2025, \"value\": 142.35, \"unit\": \"tenge per m3\", \"source\": \"NR-15\", \"evidence\": \"From 1 January 2025 the regional household water tariff is 142.35 tenge per cubic metre, in every district.\", \"note\": \"The tariff is the same in every district (NR-15).\"}"
+      },
+      {
+        "role": "assistant",
+        "annotations": [],
+        "tool_calls": [
+          {
+            "id": "call_r8wwqNkiLlVnSdkqMFrVjNBy",
+            "function": {
+              "arguments": "{\"expression\":\"(3315 - 2806) * 1000 * 142.35 / 1000000\"}",
+              "name": "calculate"
+            },
+            "type": "function"
+          }
+        ]
+      },
+      {
+        "role": "tool",
+        "tool_call_id": "call_r8wwqNkiLlVnSdkqMFrVjNBy",
+        "content": "{\"expression\": \"(3315 - 2806) * 1000 * 142.35 / 1000000\", \"result\": 72.45615}"
+      },
+      {
+        "content": "Brightwater households paid more, by 72.456 million tenge.\n\nANSWER: Brightwater | 72.456",
+        "role": "assistant",
+        "annotations": []
+      }
+    ]
+  }
+}

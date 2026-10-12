@@ -1,0 +1,7 @@
+S3 tools -> /Users/kqart/Andrey/Code/Uni/Artificial intelligence/hw4-pryakhin-andrew/outputs/c1_vague/s3
+  Q-11 ✗ {'name': 'redfen', 'number': 53.508} in 4.905s
+  Q-09 ✓ {'name': 'millbrook', 'number': 0.556} in 5.558s
+  Q-08 ✓ {'name': 'brightwater', 'number': 72.456} in 5.559s
+  Q-03 ✓ {'name': 'lindenmoor', 'number': 5.34} in 6.493s
+  Q-17 ✓ {'name': 'harrowfield', 'number': 884.457} in 7.041s
+S3 tools: 4/5 correct, $0.00404

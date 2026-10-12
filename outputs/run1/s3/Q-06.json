@@ -1,0 +1,209 @@
+{
+  "id": "Q-06",
+  "question": "Is the combined 2025 population of Redfen and Kelmarsh larger than the 2025 population of Ossford, and by how many residents do they differ?",
+  "expected": {
+    "answer": "yes",
+    "value": 14069,
+    "decimals": 0
+  },
+  "answer": {
+    "name": "yes",
+    "number": 14069.0
+  },
+  "correct": true,
+  "unanswered": false,
+  "hit_round_limit": false,
+  "seconds": 4.204,
+  "usage": {
+    "calls": 3,
+    "input_tokens": 2689,
+    "cached_tokens": 0,
+    "output_tokens": 145,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.000712
+  },
+  "final_text": "Yes. Redfen and Kelmarsh together have 14,069 more residents than Ossford.\n\nANSWER: yes | 14069",
+  "trace": {
+    "rounds": [
+      {
+        "round": 1,
+        "tool_calls": 3,
+        "usage": {
+          "calls": 1,
+          "input_tokens": 656,
+          "cached_tokens": 0,
+          "output_tokens": 90,
+          "reasoning_tokens": 0,
+          "cost_usd": 0.000239
+        },
+        "model_seconds": 1.67
+      },
+      {
+        "round": 2,
+        "tool_calls": 1,
+        "usage": {
+          "calls": 1,
+          "input_tokens": 988,
+          "cached_tokens": 0,
+          "output_tokens": 25,
+          "reasoning_tokens": 0,
+          "cost_usd": 0.000228
+        },
+        "model_seconds": 1.155
+      },
+      {
+        "round": 3,
+        "tool_calls": 0,
+        "usage": {
+          "calls": 1,
+          "input_tokens": 1045,
+          "cached_tokens": 0,
+          "output_tokens": 30,
+          "reasoning_tokens": 0,
+          "cost_usd": 0.000245
+        },
+        "model_seconds": 1.378
+      }
+    ],
+    "tool_calls": [
+      {
+        "round": 1,
+        "id": "call_cv2Lzn7vCvmHd2r3Bjcl5oUE",
+        "name": "lookup",
+        "arguments": "{\"district\": \"Redfen\", \"field\": \"population\", \"year\": 2025}",
+        "result": {
+          "district": "Redfen",
+          "field": "population",
+          "year": 2025,
+          "value": 20934,
+          "unit": "residents",
+          "source": "NR-09",
+          "evidence": "The 2025 census counted 20,934 residents, up from 19,288 at the 2020 census, on an area of 677.1 square kilometres."
+        },
+        "seconds": 0.000266
+      },
+      {
+        "round": 1,
+        "id": "call_twyXInIu63pwEqHOiychjF1J",
+        "name": "lookup",
+        "arguments": "{\"district\": \"Kelmarsh\", \"field\": \"population\", \"year\": 2025}",
+        "result": {
+          "district": "Kelmarsh",
+          "field": "population",
+          "year": 2025,
+          "value": 24117,
+          "unit": "residents",
+          "source": "NR-04",
+          "evidence": "The 2025 census recorded 24,117 residents; the 2020 census had recorded 22,845."
+        },
+        "seconds": 0.000151
+      },
+      {
+        "round": 1,
+        "id": "call_jQNd1Naky3YWP7yscQnB87AP",
+        "name": "lookup",
+        "arguments": "{\"district\": \"Ossford\", \"field\": \"population\", \"year\": 2025}",
+        "result": {
+          "district": "Ossford",
+          "field": "population",
+          "year": 2025,
+          "value": 30982,
+          "unit": "residents",
+          "source": "NR-02",
+          "evidence": "Census population: 31,560 in 2020 and 30,982 in 2025."
+        },
+        "seconds": 0.000144
+      },
+      {
+        "round": 2,
+        "id": "call_zYk9xsqpELx2pfIASMp5VoHl",
+        "name": "calculate",
+        "arguments": "{\"expression\":\"20934 + 24117 - 30982\"}",
+        "result": {
+          "expression": "20934 + 24117 - 30982",
+          "result": 14069
+        },
+        "seconds": 0.000131
+      }
+    ],
+    "messages": [
+      {
+        "role": "system",
+        "content": "You answer questions about the Nine Rivers Region, a fictional region. Use only the information you are given.\n\nYou do not have the documents. Use the lookup tool to get every fact and the calculate tool for every calculation.\n\nEnd your reply with exactly one line in this format:\nANSWER: <district name or yes/no> | <number>\nUse only the district name, or yes/no for a yes/no question. Write the number without units or thousands separators, with at least 3 decimal places unless it is a whole count."
+      },
+      {
+        "role": "user",
+        "content": "Is the combined 2025 population of Redfen and Kelmarsh larger than the 2025 population of Ossford, and by how many residents do they differ?"
+      },
+      {
+        "role": "assistant",
+        "annotations": [],
+        "tool_calls": [
+          {
+            "id": "call_cv2Lzn7vCvmHd2r3Bjcl5oUE",
+            "function": {
+              "arguments": "{\"district\": \"Redfen\", \"field\": \"population\", \"year\": 2025}",
+              "name": "lookup"
+            },
+            "type": "function"
+          },
+          {
+            "id": "call_twyXInIu63pwEqHOiychjF1J",
+            "function": {
+              "arguments": "{\"district\": \"Kelmarsh\", \"field\": \"population\", \"year\": 2025}",
+              "name": "lookup"
+            },
+            "type": "function"
+          },
+          {
+            "id": "call_jQNd1Naky3YWP7yscQnB87AP",
+            "function": {
+              "arguments": "{\"district\": \"Ossford\", \"field\": \"population\", \"year\": 2025}",
+              "name": "lookup"
+            },
+            "type": "function"
+          }
+        ]
+      },
+      {
+        "role": "tool",
+        "tool_call_id": "call_cv2Lzn7vCvmHd2r3Bjcl5oUE",
+        "content": "{\"district\": \"Redfen\", \"field\": \"population\", \"year\": 2025, \"value\": 20934, \"unit\": \"residents\", \"source\": \"NR-09\", \"evidence\": \"The 2025 census counted 20,934 residents, up from 19,288 at the 2020 census, on an area of 677.1 square kilometres.\"}"
+      },
+      {
+        "role": "tool",
+        "tool_call_id": "call_twyXInIu63pwEqHOiychjF1J",
+        "content": "{\"district\": \"Kelmarsh\", \"field\": \"population\", \"year\": 2025, \"value\": 24117, \"unit\": \"residents\", \"source\": \"NR-04\", \"evidence\": \"The 2025 census recorded 24,117 residents; the 2020 census had recorded 22,845.\"}"
+      },
+      {
+        "role": "tool",
+        "tool_call_id": "call_jQNd1Naky3YWP7yscQnB87AP",
+        "content": "{\"district\": \"Ossford\", \"field\": \"population\", \"year\": 2025, \"value\": 30982, \"unit\": \"residents\", \"source\": \"NR-02\", \"evidence\": \"Census population: 31,560 in 2020 and 30,982 in 2025.\"}"
+      },
+      {
+        "role": "assistant",
+        "annotations": [],
+        "tool_calls": [
+          {
+            "id": "call_zYk9xsqpELx2pfIASMp5VoHl",
+            "function": {
+              "arguments": "{\"expression\":\"20934 + 24117 - 30982\"}",
+              "name": "calculate"
+            },
+            "type": "function"
+          }
+        ]
+      },
+      {
+        "role": "tool",
+        "tool_call_id": "call_zYk9xsqpELx2pfIASMp5VoHl",
+        "content": "{\"expression\": \"20934 + 24117 - 30982\", \"result\": 14069}"
+      },
+      {
+        "content": "Yes. Redfen and Kelmarsh together have 14,069 more residents than Ossford.\n\nANSWER: yes | 14069",
+        "role": "assistant",
+        "annotations": []
+      }
+    ]
+  }
+}

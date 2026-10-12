@@ -52,7 +52,7 @@ def answer_question(question: dict, strategy, client: ModelClient, out_dir: Path
 def summarize(records: list[dict], label: str, wall_seconds: float, settings: dict) -> dict:
     usage = Usage()
     for record in records:
-        usage.add(Usage(**{k: v for k, v in record["usage"].items() if k != "cost_usd"}))
+        usage.add(Usage.from_dict(record["usage"]))
     seconds = [record["seconds"] for record in records]
     return {
         "strategy": label,

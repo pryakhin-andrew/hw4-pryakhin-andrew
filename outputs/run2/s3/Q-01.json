@@ -1,0 +1,305 @@
+{
+  "id": "Q-01",
+  "question": "Which district has the higher population density in 2025, Ossbridge or Ossford, and by how many residents per square kilometre?",
+  "expected": {
+    "answer": "Ossbridge",
+    "value": 4.6,
+    "decimals": 1
+  },
+  "answer": {
+    "name": "ossbridge",
+    "number": 4.57
+  },
+  "correct": true,
+  "unanswered": false,
+  "hit_round_limit": false,
+  "seconds": 5.423,
+  "usage": {
+    "calls": 4,
+    "input_tokens": 4227,
+    "cached_tokens": 3568,
+    "output_tokens": 242,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.000494
+  },
+  "final_text": "Ossbridge has the higher population density by 4.570 residents per square kilometre.\n\nANSWER: Ossbridge | 4.570",
+  "trace": {
+    "rounds": [
+      {
+        "round": 1,
+        "tool_calls": 4,
+        "usage": {
+          "calls": 1,
+          "input_tokens": 650,
+          "cached_tokens": 0,
+          "output_tokens": 121,
+          "reasoning_tokens": 0,
+          "cost_usd": 0.000275
+        },
+        "model_seconds": 1.786
+      },
+      {
+        "round": 2,
+        "tool_calls": 2,
+        "usage": {
+          "calls": 1,
+          "input_tokens": 1088,
+          "cached_tokens": 1085,
+          "output_tokens": 58,
+          "reasoning_tokens": 0,
+          "cost_usd": 9.2e-05
+        },
+        "model_seconds": 1.309
+      },
+      {
+        "round": 3,
+        "tool_calls": 1,
+        "usage": {
+          "calls": 1,
+          "input_tokens": 1207,
+          "cached_tokens": 1204,
+          "output_tokens": 32,
+          "reasoning_tokens": 0,
+          "cost_usd": 6.3e-05
+        },
+        "model_seconds": 1.119
+      },
+      {
+        "round": 4,
+        "tool_calls": 0,
+        "usage": {
+          "calls": 1,
+          "input_tokens": 1282,
+          "cached_tokens": 1279,
+          "output_tokens": 31,
+          "reasoning_tokens": 0,
+          "cost_usd": 6.3e-05
+        },
+        "model_seconds": 1.206
+      }
+    ],
+    "tool_calls": [
+      {
+        "round": 1,
+        "id": "call_QfpsZkBgolhh93BHItvNeFwd",
+        "name": "lookup",
+        "arguments": "{\"district\": \"Ossbridge\", \"field\": \"population\", \"year\": 2025}",
+        "result": {
+          "district": "Ossbridge",
+          "field": "population",
+          "year": 2025,
+          "value": 52904,
+          "unit": "residents",
+          "source": "NR-01",
+          "evidence": "The 2025 census recorded 52,904 residents; the 2020 census had recorded 48,317."
+        },
+        "seconds": 0.000178
+      },
+      {
+        "round": 1,
+        "id": "call_o3Q8EhkEsU5aJElzPf2kdLEe",
+        "name": "lookup",
+        "arguments": "{\"district\": \"Ossbridge\", \"field\": \"area_km2\", \"year\": 2025}",
+        "result": {
+          "district": "Ossbridge",
+          "field": "area_km2",
+          "year": 2025,
+          "value": 1284.6,
+          "unit": "km2",
+          "source": "NR-01",
+          "evidence": "Founded in 1871 on the Oss, Ossbridge covers 1,284.6 square kilometres."
+        },
+        "seconds": 0.00035
+      },
+      {
+        "round": 1,
+        "id": "call_YuJjLiFkPBSmFwV0FJ89bqHt",
+        "name": "lookup",
+        "arguments": "{\"district\": \"Ossford\", \"field\": \"population\", \"year\": 2025}",
+        "result": {
+          "district": "Ossford",
+          "field": "population",
+          "year": 2025,
+          "value": 30982,
+          "unit": "residents",
+          "source": "NR-02",
+          "evidence": "Census population: 31,560 in 2020 and 30,982 in 2025."
+        },
+        "seconds": 0.00013
+      },
+      {
+        "round": 1,
+        "id": "call_XLuS3iJcCMONPjaIovcmaPi1",
+        "name": "lookup",
+        "arguments": "{\"district\": \"Ossford\", \"field\": \"area_km2\", \"year\": 2025}",
+        "result": {
+          "district": "Ossford",
+          "field": "area_km2",
+          "year": 2025,
+          "value": 846.2,
+          "unit": "km2",
+          "source": "NR-02",
+          "evidence": "The district, founded in 1903, stretches along the Oss over 846.2 square kilometres and keeps 388.9 km of paved road."
+        },
+        "seconds": 0.000107
+      },
+      {
+        "round": 2,
+        "id": "call_AEFhYtRIOQZvSvX5T4GXmK0A",
+        "name": "calculate",
+        "arguments": "{\"expression\": \"52904 / 1284.6\"}",
+        "result": {
+          "expression": "52904 / 1284.6",
+          "result": 41.1832477036
+        },
+        "seconds": 6.2e-05
+      },
+      {
+        "round": 2,
+        "id": "call_GTgjdNmEmvu8A2w0n66vffxG",
+        "name": "calculate",
+        "arguments": "{\"expression\": \"30982 / 846.2\"}",
+        "result": {
+          "expression": "30982 / 846.2",
+          "result": 36.6130938312
+        },
+        "seconds": 3.1e-05
+      },
+      {
+        "round": 3,
+        "id": "call_oS27iPzVc0aTMmiHnd3Bhs28",
+        "name": "calculate",
+        "arguments": "{\"expression\":\"52904 / 1284.6 - 30982 / 846.2\"}",
+        "result": {
+          "expression": "52904 / 1284.6 - 30982 / 846.2",
+          "result": 4.5701538723
+        },
+        "seconds": 0.000185
+      }
+    ],
+    "messages": [
+      {
+        "role": "system",
+        "content": "You answer questions about the Nine Rivers Region, a fictional region. Use only the information you are given.\n\nYou do not have the documents. Use the lookup tool to get every fact and the calculate tool for every calculation.\n\nEnd your reply with exactly one line in this format:\nANSWER: <district name or yes/no> | <number>\nUse only the district name, or yes/no for a yes/no question. Write the number without units or thousands separators, with at least 3 decimal places unless it is a whole count."
+      },
+      {
+        "role": "user",
+        "content": "Which district has the higher population density in 2025, Ossbridge or Ossford, and by how many residents per square kilometre?"
+      },
+      {
+        "role": "assistant",
+        "annotations": [],
+        "tool_calls": [
+          {
+            "id": "call_QfpsZkBgolhh93BHItvNeFwd",
+            "function": {
+              "arguments": "{\"district\": \"Ossbridge\", \"field\": \"population\", \"year\": 2025}",
+              "name": "lookup"
+            },
+            "type": "function"
+          },
+          {
+            "id": "call_o3Q8EhkEsU5aJElzPf2kdLEe",
+            "function": {
+              "arguments": "{\"district\": \"Ossbridge\", \"field\": \"area_km2\", \"year\": 2025}",
+              "name": "lookup"
+            },
+            "type": "function"
+          },
+          {
+            "id": "call_YuJjLiFkPBSmFwV0FJ89bqHt",
+            "function": {
+              "arguments": "{\"district\": \"Ossford\", \"field\": \"population\", \"year\": 2025}",
+              "name": "lookup"
+            },
+            "type": "function"
+          },
+          {
+            "id": "call_XLuS3iJcCMONPjaIovcmaPi1",
+            "function": {
+              "arguments": "{\"district\": \"Ossford\", \"field\": \"area_km2\", \"year\": 2025}",
+              "name": "lookup"
+            },
+            "type": "function"
+          }
+        ]
+      },
+      {
+        "role": "tool",
+        "tool_call_id": "call_QfpsZkBgolhh93BHItvNeFwd",
+        "content": "{\"district\": \"Ossbridge\", \"field\": \"population\", \"year\": 2025, \"value\": 52904, \"unit\": \"residents\", \"source\": \"NR-01\", \"evidence\": \"The 2025 census recorded 52,904 residents; the 2020 census had recorded 48,317.\"}"
+      },
+      {
+        "role": "tool",
+        "tool_call_id": "call_o3Q8EhkEsU5aJElzPf2kdLEe",
+        "content": "{\"district\": \"Ossbridge\", \"field\": \"area_km2\", \"year\": 2025, \"value\": 1284.6, \"unit\": \"km2\", \"source\": \"NR-01\", \"evidence\": \"Founded in 1871 on the Oss, Ossbridge covers 1,284.6 square kilometres.\"}"
+      },
+      {
+        "role": "tool",
+        "tool_call_id": "call_YuJjLiFkPBSmFwV0FJ89bqHt",
+        "content": "{\"district\": \"Ossford\", \"field\": \"population\", \"year\": 2025, \"value\": 30982, \"unit\": \"residents\", \"source\": \"NR-02\", \"evidence\": \"Census population: 31,560 in 2020 and 30,982 in 2025.\"}"
+      },
+      {
+        "role": "tool",
+        "tool_call_id": "call_XLuS3iJcCMONPjaIovcmaPi1",
+        "content": "{\"district\": \"Ossford\", \"field\": \"area_km2\", \"year\": 2025, \"value\": 846.2, \"unit\": \"km2\", \"source\": \"NR-02\", \"evidence\": \"The district, founded in 1903, stretches along the Oss over 846.2 square kilometres and keeps 388.9 km of paved road.\"}"
+      },
+      {
+        "role": "assistant",
+        "annotations": [],
+        "tool_calls": [
+          {
+            "id": "call_AEFhYtRIOQZvSvX5T4GXmK0A",
+            "function": {
+              "arguments": "{\"expression\": \"52904 / 1284.6\"}",
+              "name": "calculate"
+            },
+            "type": "function"
+          },
+          {
+            "id": "call_GTgjdNmEmvu8A2w0n66vffxG",
+            "function": {
+              "arguments": "{\"expression\": \"30982 / 846.2\"}",
+              "name": "calculate"
+            },
+            "type": "function"
+          }
+        ]
+      },
+      {
+        "role": "tool",
+        "tool_call_id": "call_AEFhYtRIOQZvSvX5T4GXmK0A",
+        "content": "{\"expression\": \"52904 / 1284.6\", \"result\": 41.1832477036}"
+      },
+      {
+        "role": "tool",
+        "tool_call_id": "call_GTgjdNmEmvu8A2w0n66vffxG",
+        "content": "{\"expression\": \"30982 / 846.2\", \"result\": 36.6130938312}"
+      },
+      {
+        "role": "assistant",
+        "annotations": [],
+        "tool_calls": [
+          {
+            "id": "call_oS27iPzVc0aTMmiHnd3Bhs28",
+            "function": {
+              "arguments": "{\"expression\":\"52904 / 1284.6 - 30982 / 846.2\"}",
+              "name": "calculate"
+            },
+            "type": "function"
+          }
+        ]
+      },
+      {
+        "role": "tool",
+        "tool_call_id": "call_oS27iPzVc0aTMmiHnd3Bhs28",
+        "content": "{\"expression\": \"52904 / 1284.6 - 30982 / 846.2\", \"result\": 4.5701538723}"
+      },
+      {
+        "content": "Ossbridge has the higher population density by 4.570 residents per square kilometre.\n\nANSWER: Ossbridge | 4.570",
+        "role": "assistant",
+        "annotations": []
+      }
+    ]
+  }
+}

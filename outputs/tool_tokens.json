@@ -1,0 +1,8 @@
+{
+  "question": "Q-09",
+  "input_tokens_without_tools": 144,
+  "input_tokens_with_tools": 650,
+  "input_tokens_with_vague_lookup": 527,
+  "tool_definition_tokens": 506,
+  "tool_definition_tokens_vague": 383
+}

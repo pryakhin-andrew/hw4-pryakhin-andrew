@@ -66,6 +66,16 @@ class Usage:
             + self.output_tokens * PRICE_PER_MILLION["output"]
         ) / 1_000_000
 
+    @property
+    def cost_without_cache(self) -> float:
+        return (
+            self.input_tokens * PRICE_PER_MILLION["input"] + self.output_tokens * PRICE_PER_MILLION["output"]
+        ) / 1_000_000
+
+    @classmethod
+    def from_dict(cls, data: dict) -> "Usage":
+        return cls(**{name: data[name] for name in cls.__dataclass_fields__})
+
     def to_dict(self) -> dict:
         return {**asdict(self), "cost_usd": round(self.cost, 6)}
 

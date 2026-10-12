@@ -1,0 +1,44 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.14.8, pytest-9.1.1, pluggy-1.6.0 -- ./.venv/bin/python
+cachedir: .pytest_cache
+rootdir: .
+configfile: pytest.ini
+testpaths: tests
+plugins: anyio-4.15.1
+collecting ... collected 33 items
+
+tests/test_tools.py::test_lookup_returns_2025_population_with_source PASSED [  3%]
+tests/test_tools.py::test_lookup_returns_2020_population PASSED          [  6%]
+tests/test_tools.py::test_lookup_misspelled_name_suggests_without_guessing PASSED [  9%]
+tests/test_tools.py::test_lookup_keeps_similar_districts_apart PASSED    [ 12%]
+tests/test_tools.py::test_lookup_ignores_archived_profiles[Tarnvale-schools-29-27] PASSED [ 15%]
+tests/test_tools.py::test_lookup_ignores_archived_profiles[Kelmarsh-pupils-3268-2944] PASSED [ 18%]
+tests/test_tools.py::test_lookup_ignores_archived_profiles[Kelmarsh-water_use_megalitres-1739-1652] PASSED [ 21%]
+tests/test_tools.py::test_lookup_refuses_archived_year PASSED            [ 24%]
+tests/test_tools.py::test_lookup_applies_correction_notice PASSED        [ 27%]
+tests/test_tools.py::test_lookup_converts_cubic_metres_to_megalitres PASSED [ 30%]
+tests/test_tools.py::test_lookup_reads_each_sentence_template PASSED     [ 33%]
+tests/test_tools.py::test_lookup_water_tariff PASSED                     [ 36%]
+tests/test_tools.py::test_lookup_never_crashes_on_bad_input[Ossford-density-2025] PASSED [ 39%]
+tests/test_tools.py::test_lookup_never_crashes_on_bad_input[-population-2025] PASSED [ 42%]
+tests/test_tools.py::test_lookup_never_crashes_on_bad_input[None-population-2025] PASSED [ 45%]
+tests/test_tools.py::test_lookup_never_crashes_on_bad_input[500-character-name] PASSED [ 48%]
+tests/test_tools.py::test_lookup_never_crashes_on_bad_input[Ossford-population-2025] PASSED [ 51%]
+tests/test_tools.py::test_lookup_never_crashes_on_bad_input[Ossford-area_km2-2020] PASSED [ 54%]
+tests/test_tools.py::test_calculate_multiplication PASSED                [ 57%]
+tests/test_tools.py::test_calculate_density PASSED                       [ 60%]
+tests/test_tools.py::test_calculate_refuses_dangerous_input_quickly[__import__('os').system('echo hi')] PASSED [ 63%]
+tests/test_tools.py::test_calculate_refuses_dangerous_input_quickly[(1).__class__] PASSED [ 66%]
+tests/test_tools.py::test_calculate_refuses_dangerous_input_quickly[9**9**9] PASSED [ 69%]
+tests/test_tools.py::test_calculate_returns_errors[1 / 0-division by zero] PASSED [ 72%]
+tests/test_tools.py::test_calculate_returns_errors[10 ** 15 * 10-too large] PASSED [ 75%]
+tests/test_tools.py::test_calculate_returns_errors[44,675 / 2-without commas] PASSED [ 78%]
+tests/test_tools.py::test_calculate_returns_errors[abs(-1)-not allowed] PASSED [ 81%]
+tests/test_tools.py::test_calculate_returns_errors[x + 1-not allowed] PASSED [ 84%]
+tests/test_tools.py::test_calculate_returns_errors['a' * 3-not allowed] PASSED [ 87%]
+tests/test_tools.py::test_calculate_returns_errors[1 +-could not read] PASSED [ 90%]
+tests/test_tools.py::test_calculate_returns_errors[400-character-expression] PASSED [ 93%]
+tests/test_tools.py::test_calculate_returns_errors[(-8) ** 0.5-not a real number] PASSED [ 96%]
+tests/test_tools.py::test_run_tool_handles_bad_arguments PASSED          [100%]
+
+============================== 33 passed in 0.04s ==============================

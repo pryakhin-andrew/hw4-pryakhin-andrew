@@ -1,0 +1,167 @@
+| Run | Strategy | Correct /20 | Unanswered | Input tokens | Output tokens | Median seconds per question | Total seconds | Cost ($) |
+|---|---|---:|---:|---:|---:|---:|---:|---:|
+| 1 | S1 direct | 3 | 0 | 44,280 | 484 | 1.30 | 26.1 | 0.0016 |
+| 1 | S2 think and vote (k = 5) | 15 | 0 | 223,200 | 15,793 | 2.39 | 53.3 | 0.0236 |
+| 1 | S3 tools | 20 | 0 | 72,511 | 4,586 | 5.27 | 105.7 | 0.0141 |
+| 2 | S1 direct | 4 | 0 | 44,280 | 506 | 1.28 | 25.8 | 0.0015 |
+| 2 | S2 think and vote (k = 5) | 16 | 0 | 223,200 | 15,917 | 2.46 | 50.1 | 0.0236 |
+| 2 | S3 tools | 19 | 0 | 70,515 | 4,436 | 5.16 | 108.4 | 0.0109 |
+
+| Run | Strategy | Model calls | Cached input tokens | Cost with cache ($) | Cost if nothing was cached ($) | Wall-clock seconds |
+|---|---|---:|---:|---:|---:|---:|
+| 1 | S1 direct | 20 | 43,585 | 0.0016 | 0.0094 | 6.8 |
+| 1 | S2 think and vote (k = 5) | 100 | 222,104 | 0.0236 | 0.0636 | 17.1 |
+| 1 | S3 tools | 69 | 32,654 | 0.0141 | 0.0200 | 28.2 |
+| 2 | S1 direct | 20 | 44,220 | 0.0015 | 0.0095 | 6.8 |
+| 2 | S2 think and vote (k = 5) | 100 | 222,900 | 0.0236 | 0.0637 | 14.0 |
+| 2 | S3 tools | 68 | 47,355 | 0.0109 | 0.0194 | 30.3 |
+
+| Question | S1 | S2 | S3 |
+|---|:---:|:---:|:---:|
+| Q-01 | ✗ | ✓ | ✓ |
+| Q-02 | ✗ | ✓ | ✓ |
+| Q-03 | ✗ | ✓ | ✓ |
+| Q-04 | ✗ | ✓ | ✓ |
+| Q-05 | ✗ | ✗ | ✓ |
+| Q-06 | ✗ | ✓ | ✓ |
+| Q-07 | ✗ | ✗ | ✓ |
+| Q-08 | ✗ | ✓ | ✓ |
+| Q-09 | ✗ | ✓ | ✓ |
+| Q-10 | ✓ | ✓ | ✓ |
+| Q-11 | ✗ | ✓ | ✓ |
+| Q-12 | ✗ | ✗ | ✓ |
+| Q-13 | ✓ | ✓ | ✓ |
+| Q-14 | ✗ | ✓ | ✓ |
+| Q-15 | ✗ | ✓ | ✓ |
+| Q-16 | ✓ | ✓ | ✓ |
+| Q-17 | ✗ | ✗ | ✓ |
+| Q-18 | ✗ | ✓ | ✓ |
+| Q-19 | ✗ | ✓ | ✓ |
+| Q-20 | ✗ | ✗ | ✓ |
+
+Questions whose result changed between the two runs:
+  s1: 1 ['Q-18']
+  s2: 1 ['Q-07']
+  s3: 1 ['Q-11']
+Paired S3 vs S2 (questions only one of them got right):
+  run1: only S3 right ['Q-05', 'Q-07', 'Q-12', 'Q-17', 'Q-20'], only S2 right [], sign test p = 0.062
+  run2: only S3 right ['Q-05', 'Q-12', 'Q-17', 'Q-20'], only S2 right ['Q-11'], sign test p = 0.375
+  both runs: 9 vs 1, sign test p = 0.021
+
+Correct with no tolerance (number rounded to `decimals` must equal `value` exactly):
+  run1 s1: 3/20 strict, 3/20 with my rule
+  run1 s2: 13/20 strict, 15/20 with my rule
+  run1 s3: 20/20 strict, 20/20 with my rule
+  run2 s1: 3/20 strict, 4/20 with my rule
+  run2 s2: 12/20 strict, 16/20 with my rule
+  run2 s3: 19/20 strict, 19/20 with my rule
+
+Uncertainty (1.96 standard errors, both runs pooled):
+  s1: accuracy 0.175, one run of 20 questions gives about ±0.167
+  s2: accuracy 0.775, one run of 20 questions gives about ±0.183
+  s3: accuracy 0.975, one run of 20 questions gives about ±0.068
+  S3 minus S2 per question: mean 0.200, variance 0.210
+  20 questions: difference 0.200 ± 0.201
+  questions needed for ± 0.200: 20
+  questions needed for ± 0.100: 81
+  questions needed for ± 0.050: 323
+
+S2 samples: correct samples out of 5, and whether the vote was correct
+  Q-01: 5/5 samples, vote ✓, names ['ossbridge'], distinct answers 1
+  Q-02: 5/5 samples, vote ✓, names ['harrowfield'], distinct answers 1
+  Q-03: 5/5 samples, vote ✓, names ['lindenmoor'], distinct answers 2
+  Q-04: 5/5 samples, vote ✓, names ['millbrook'], distinct answers 1
+  Q-05: 0/5 samples, vote ✗, names ['coldharbour'], distinct answers 5
+  Q-06: 5/5 samples, vote ✓, names ['yes'], distinct answers 1
+  Q-07: 1/5 samples, vote ✗, names ['coldharbour'], distinct answers 3
+  Q-08: 2/5 samples, vote ✓, names ['brightwater'], distinct answers 4
+  Q-09: 5/5 samples, vote ✓, names ['millbrook'], distinct answers 1
+  Q-10: 5/5 samples, vote ✓, names ['stonecairn'], distinct answers 1
+  Q-11: 5/5 samples, vote ✓, names ['redfen'], distinct answers 1
+  Q-12: 1/5 samples, vote ✗, names ['tarnvale'], distinct answers 5
+  Q-13: 5/5 samples, vote ✓, names ['coldharbour'], distinct answers 1
+  Q-14: 5/5 samples, vote ✓, names ['ashgrove'], distinct answers 3
+  Q-15: 5/5 samples, vote ✓, names ['redfen'], distinct answers 1
+  Q-16: 5/5 samples, vote ✓, names ['yes'], distinct answers 1
+  Q-17: 0/5 samples, vote ✗, names ['harrowfield'], distinct answers 3
+  Q-18: 4/5 samples, vote ✓, names ['yes'], distinct answers 4
+  Q-19: 5/5 samples, vote ✓, names ['lindenmoor'], distinct answers 2
+  Q-20: 0/5 samples, vote ✗, names ['ashgrove'], distinct answers 5
+  single sample accuracy 73/100 = 73.0%, vote accuracy 15/20
+
+S2 samples: correct samples out of 5, and whether the vote was correct
+  Q-01: 5/5 samples, vote ✓, names ['ossbridge'], distinct answers 1
+  Q-02: 5/5 samples, vote ✓, names ['harrowfield'], distinct answers 1
+  Q-03: 5/5 samples, vote ✓, names ['lindenmoor'], distinct answers 2
+  Q-04: 5/5 samples, vote ✓, names ['millbrook'], distinct answers 1
+  Q-05: 0/5 samples, vote ✗, names ['coldharbour'], distinct answers 5
+  Q-06: 5/5 samples, vote ✓, names ['yes'], distinct answers 1
+  Q-07: 3/5 samples, vote ✓, names ['coldharbour'], distinct answers 3
+  Q-08: 3/5 samples, vote ✓, names ['brightwater'], distinct answers 3
+  Q-09: 5/5 samples, vote ✓, names ['millbrook'], distinct answers 1
+  Q-10: 5/5 samples, vote ✓, names ['stonecairn'], distinct answers 1
+  Q-11: 5/5 samples, vote ✓, names ['redfen'], distinct answers 1
+  Q-12: 1/5 samples, vote ✗, names ['tarnvale'], distinct answers 5
+  Q-13: 5/5 samples, vote ✓, names ['coldharbour'], distinct answers 1
+  Q-14: 4/5 samples, vote ✓, names ['ashgrove'], distinct answers 3
+  Q-15: 5/5 samples, vote ✓, names ['redfen'], distinct answers 1
+  Q-16: 5/5 samples, vote ✓, names ['yes'], distinct answers 1
+  Q-17: 1/5 samples, vote ✗, names ['harrowfield'], distinct answers 3
+  Q-18: 3/5 samples, vote ✓, names ['yes'], distinct answers 4
+  Q-19: 5/5 samples, vote ✓, names ['lindenmoor'], distinct answers 1
+  Q-20: 0/5 samples, vote ✗, names ['ashgrove'], distinct answers 5
+  single sample accuracy 75/100 = 75.0%, vote accuracy 16/20
+
+S3: model calls, tool calls and input tokens per model call
+  Q-01: 4 model calls, 7 tool calls, input tokens per call [650, 1088, 1207, 1282]
+  Q-02: 4 model calls, 7 tool calls, input tokens per call [656, 1105, 1236, 1303]
+  Q-03: 4 model calls, 7 tool calls, input tokens per call [656, 1144, 1283, 1375]
+  Q-04: 3 model calls, 5 tool calls, input tokens per call [651, 1072, 1137]
+  Q-05: 4 model calls, 7 tool calls, input tokens per call [652, 1135, 1277, 1375]
+  Q-06: 3 model calls, 4 tool calls, input tokens per call [656, 988, 1045]
+  Q-07: 3 model calls, 7 tool calls, input tokens per call [660, 1141, 1350]
+  Q-08: 3 model calls, 6 tool calls, input tokens per call [658, 1253, 1335]
+  Q-09: 4 model calls, 7 tool calls, input tokens per call [650, 1090, 1207, 1280]
+  Q-10: 3 model calls, 3 tool calls, input tokens per call [647, 857, 905]
+  Q-11: 4 model calls, 10 tool calls, input tokens per call [665, 1277, 1418, 1472]
+  Q-12: 4 model calls, 7 tool calls, input tokens per call [653, 1103, 1234, 1305]
+  Q-13: 3 model calls, 9 tool calls, input tokens per call [661, 1332, 1512]
+  Q-14: 4 model calls, 7 tool calls, input tokens per call [656, 1104, 1237, 1324]
+  Q-15: 3 model calls, 7 tool calls, input tokens per call [651, 1070, 1228]
+  Q-16: 3 model calls, 4 tool calls, input tokens per call [650, 1000, 1068]
+  Q-17: 3 model calls, 6 tool calls, input tokens per call [662, 1233, 1338]
+  Q-18: 3 model calls, 3 tool calls, input tokens per call [673, 892, 955]
+  Q-19: 3 model calls, 7 tool calls, input tokens per call [650, 1136, 1325]
+  Q-20: 4 model calls, 10 tool calls, input tokens per call [663, 1296, 1494, 1568]
+  call 1: median input tokens 656 over 20 questions
+  call 2: median input tokens 1104 over 20 questions
+  call 3: median input tokens 1236 over 20 questions
+  call 4: median input tokens 1324 over 9 questions
+
+S3: model calls, tool calls and input tokens per model call
+  Q-01: 4 model calls, 7 tool calls, input tokens per call [650, 1088, 1207, 1282]
+  Q-02: 4 model calls, 7 tool calls, input tokens per call [656, 1105, 1236, 1303]
+  Q-03: 4 model calls, 7 tool calls, input tokens per call [656, 1144, 1283, 1350]
+  Q-04: 3 model calls, 5 tool calls, input tokens per call [651, 1072, 1137]
+  Q-05: 4 model calls, 7 tool calls, input tokens per call [652, 1135, 1277, 1375]
+  Q-06: 3 model calls, 4 tool calls, input tokens per call [656, 988, 1045]
+  Q-07: 3 model calls, 5 tool calls, input tokens per call [660, 1141, 1230]
+  Q-08: 3 model calls, 4 tool calls, input tokens per call [658, 1067, 1139]
+  Q-09: 4 model calls, 7 tool calls, input tokens per call [650, 1090, 1207, 1280]
+  Q-10: 3 model calls, 3 tool calls, input tokens per call [647, 857, 905]
+  Q-11: 3 model calls, 10 tool calls, input tokens per call [665, 1247, 1440]
+  Q-12: 3 model calls, 7 tool calls, input tokens per call [653, 1103, 1304]
+  Q-13: 3 model calls, 9 tool calls, input tokens per call [661, 1332, 1512]
+  Q-14: 4 model calls, 7 tool calls, input tokens per call [656, 1104, 1237, 1324]
+  Q-15: 3 model calls, 7 tool calls, input tokens per call [651, 1070, 1228]
+  Q-16: 3 model calls, 4 tool calls, input tokens per call [650, 1000, 1068]
+  Q-17: 3 model calls, 7 tool calls, input tokens per call [662, 1233, 1372]
+  Q-18: 3 model calls, 3 tool calls, input tokens per call [673, 892, 955]
+  Q-19: 4 model calls, 7 tool calls, input tokens per call [650, 1116, 1239, 1318]
+  Q-20: 4 model calls, 10 tool calls, input tokens per call [663, 1296, 1494, 1568]
+  call 1: median input tokens 656 over 20 questions
+  call 2: median input tokens 1104 over 20 questions
+  call 3: median input tokens 1233 over 20 questions
+  call 4: median input tokens 1321 over 8 questions
+
+All runs in outputs/: 424 model calls, $0.0872

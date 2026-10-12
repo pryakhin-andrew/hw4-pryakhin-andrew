@@ -1,0 +1,306 @@
+{
+  "id": "Q-09",
+  "question": "Which district has the higher population density in 2025, Brightwater or Millbrook, and by how many residents per square kilometre?",
+  "expected": {
+    "answer": "Millbrook",
+    "value": 0.6,
+    "decimals": 1
+  },
+  "answer": {
+    "name": "millbrook",
+    "number": 0.556
+  },
+  "correct": true,
+  "unanswered": false,
+  "hit_round_limit": false,
+  "seconds": 5.252,
+  "usage": {
+    "calls": 4,
+    "input_tokens": 4227,
+    "cached_tokens": 3568,
+    "output_tokens": 235,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.000485
+  },
+  "final_text": "Millbrook has the higher population density by 0.556 residents per square kilometre.\n\nANSWER: Millbrook | 0.556",
+  "trace": {
+    "rounds": [
+      {
+        "round": 1,
+        "tool_calls": 4,
+        "usage": {
+          "calls": 1,
+          "input_tokens": 650,
+          "cached_tokens": 0,
+          "output_tokens": 117,
+          "reasoning_tokens": 0,
+          "cost_usd": 0.00027
+        },
+        "model_seconds": 1.614
+      },
+      {
+        "round": 2,
+        "tool_calls": 2,
+        "usage": {
+          "calls": 1,
+          "input_tokens": 1090,
+          "cached_tokens": 1087,
+          "output_tokens": 57,
+          "reasoning_tokens": 0,
+          "cost_usd": 9.1e-05
+        },
+        "model_seconds": 1.205
+      },
+      {
+        "round": 3,
+        "tool_calls": 1,
+        "usage": {
+          "calls": 1,
+          "input_tokens": 1207,
+          "cached_tokens": 1204,
+          "output_tokens": 31,
+          "reasoning_tokens": 0,
+          "cost_usd": 6.2e-05
+        },
+        "model_seconds": 1.103
+      },
+      {
+        "round": 4,
+        "tool_calls": 0,
+        "usage": {
+          "calls": 1,
+          "input_tokens": 1280,
+          "cached_tokens": 1277,
+          "output_tokens": 30,
+          "reasoning_tokens": 0,
+          "cost_usd": 6.2e-05
+        },
+        "model_seconds": 1.328
+      }
+    ],
+    "tool_calls": [
+      {
+        "round": 1,
+        "id": "call_309jzoXSsTyKgib3LagLfCnW",
+        "name": "lookup",
+        "arguments": "{\"district\": \"Brightwater\", \"field\": \"population\", \"year\": 2025}",
+        "result": {
+          "district": "Brightwater",
+          "field": "population",
+          "year": 2025,
+          "value": 44675,
+          "unit": "residents",
+          "source": "NR-05",
+          "evidence": "Census population: 39,902 in 2020 and 44,675 in 2025."
+        },
+        "seconds": 0.000179
+      },
+      {
+        "round": 1,
+        "id": "call_oJwHFGBQ4yQvVHzrdGIPV4dM",
+        "name": "lookup",
+        "arguments": "{\"district\": \"Brightwater\", \"field\": \"area_km2\", \"year\": 2025}",
+        "result": {
+          "district": "Brightwater",
+          "field": "area_km2",
+          "year": 2025,
+          "value": 921.4,
+          "unit": "km2",
+          "source": "NR-16",
+          "evidence": "The correct area is 921.4 square kilometres.",
+          "note": "Corrected by NR-16. The profile NR-05 says 912.4."
+        },
+        "seconds": 0.000131
+      },
+      {
+        "round": 1,
+        "id": "call_XvKvRw7Yd8NM2ZY1TiMbZAOS",
+        "name": "lookup",
+        "arguments": "{\"district\": \"Millbrook\", \"field\": \"population\", \"year\": 2025}",
+        "result": {
+          "district": "Millbrook",
+          "field": "population",
+          "year": 2025,
+          "value": 37203,
+          "unit": "residents",
+          "source": "NR-11",
+          "evidence": "Census population: 34,590 in 2020 and 37,203 in 2025."
+        },
+        "seconds": 0.0001
+      },
+      {
+        "round": 1,
+        "id": "call_qxSFg6UJZRNYRxV0uHvISxW2",
+        "name": "lookup",
+        "arguments": "{\"district\": \"Millbrook\", \"field\": \"area_km2\", \"year\": 2025}",
+        "result": {
+          "district": "Millbrook",
+          "field": "area_km2",
+          "year": 2025,
+          "value": 758.6,
+          "unit": "km2",
+          "source": "NR-11",
+          "evidence": "The district, founded in 1897, stretches along the Mill Brook over 758.6 square kilometres and keeps 360.1 km of paved road."
+        },
+        "seconds": 8.4e-05
+      },
+      {
+        "round": 2,
+        "id": "call_KYmO8rW62zh3gKMR9ssPG2Bp",
+        "name": "calculate",
+        "arguments": "{\"expression\": \"44675 / 921.4\"}",
+        "result": {
+          "expression": "44675 / 921.4",
+          "result": 48.4859995659
+        },
+        "seconds": 0.000131
+      },
+      {
+        "round": 2,
+        "id": "call_njJ79iPgZ5Z3jSOBW9x4sXgI",
+        "name": "calculate",
+        "arguments": "{\"expression\": \"37203 / 758.6\"}",
+        "result": {
+          "expression": "37203 / 758.6",
+          "result": 49.0416556815
+        },
+        "seconds": 4.5e-05
+      },
+      {
+        "round": 3,
+        "id": "call_9mUUdSDuuhS72znavS9nj914",
+        "name": "calculate",
+        "arguments": "{\"expression\":\"37203 / 758.6 - 44675 / 921.4\"}",
+        "result": {
+          "expression": "37203 / 758.6 - 44675 / 921.4",
+          "result": 0.5556561156
+        },
+        "seconds": 0.000134
+      }
+    ],
+    "messages": [
+      {
+        "role": "system",
+        "content": "You answer questions about the Nine Rivers Region, a fictional region. Use only the information you are given.\n\nYou do not have the documents. Use the lookup tool to get every fact and the calculate tool for every calculation.\n\nEnd your reply with exactly one line in this format:\nANSWER: <district name or yes/no> | <number>\nUse only the district name, or yes/no for a yes/no question. Write the number without units or thousands separators, with at least 3 decimal places unless it is a whole count."
+      },
+      {
+        "role": "user",
+        "content": "Which district has the higher population density in 2025, Brightwater or Millbrook, and by how many residents per square kilometre?"
+      },
+      {
+        "role": "assistant",
+        "annotations": [],
+        "tool_calls": [
+          {
+            "id": "call_309jzoXSsTyKgib3LagLfCnW",
+            "function": {
+              "arguments": "{\"district\": \"Brightwater\", \"field\": \"population\", \"year\": 2025}",
+              "name": "lookup"
+            },
+            "type": "function"
+          },
+          {
+            "id": "call_oJwHFGBQ4yQvVHzrdGIPV4dM",
+            "function": {
+              "arguments": "{\"district\": \"Brightwater\", \"field\": \"area_km2\", \"year\": 2025}",
+              "name": "lookup"
+            },
+            "type": "function"
+          },
+          {
+            "id": "call_XvKvRw7Yd8NM2ZY1TiMbZAOS",
+            "function": {
+              "arguments": "{\"district\": \"Millbrook\", \"field\": \"population\", \"year\": 2025}",
+              "name": "lookup"
+            },
+            "type": "function"
+          },
+          {
+            "id": "call_qxSFg6UJZRNYRxV0uHvISxW2",
+            "function": {
+              "arguments": "{\"district\": \"Millbrook\", \"field\": \"area_km2\", \"year\": 2025}",
+              "name": "lookup"
+            },
+            "type": "function"
+          }
+        ]
+      },
+      {
+        "role": "tool",
+        "tool_call_id": "call_309jzoXSsTyKgib3LagLfCnW",
+        "content": "{\"district\": \"Brightwater\", \"field\": \"population\", \"year\": 2025, \"value\": 44675, \"unit\": \"residents\", \"source\": \"NR-05\", \"evidence\": \"Census population: 39,902 in 2020 and 44,675 in 2025.\"}"
+      },
+      {
+        "role": "tool",
+        "tool_call_id": "call_oJwHFGBQ4yQvVHzrdGIPV4dM",
+        "content": "{\"district\": \"Brightwater\", \"field\": \"area_km2\", \"year\": 2025, \"value\": 921.4, \"unit\": \"km2\", \"source\": \"NR-16\", \"evidence\": \"The correct area is 921.4 square kilometres.\", \"note\": \"Corrected by NR-16. The profile NR-05 says 912.4.\"}"
+      },
+      {
+        "role": "tool",
+        "tool_call_id": "call_XvKvRw7Yd8NM2ZY1TiMbZAOS",
+        "content": "{\"district\": \"Millbrook\", \"field\": \"population\", \"year\": 2025, \"value\": 37203, \"unit\": \"residents\", \"source\": \"NR-11\", \"evidence\": \"Census population: 34,590 in 2020 and 37,203 in 2025.\"}"
+      },
+      {
+        "role": "tool",
+        "tool_call_id": "call_qxSFg6UJZRNYRxV0uHvISxW2",
+        "content": "{\"district\": \"Millbrook\", \"field\": \"area_km2\", \"year\": 2025, \"value\": 758.6, \"unit\": \"km2\", \"source\": \"NR-11\", \"evidence\": \"The district, founded in 1897, stretches along the Mill Brook over 758.6 square kilometres and keeps 360.1 km of paved road.\"}"
+      },
+      {
+        "role": "assistant",
+        "annotations": [],
+        "tool_calls": [
+          {
+            "id": "call_KYmO8rW62zh3gKMR9ssPG2Bp",
+            "function": {
+              "arguments": "{\"expression\": \"44675 / 921.4\"}",
+              "name": "calculate"
+            },
+            "type": "function"
+          },
+          {
+            "id": "call_njJ79iPgZ5Z3jSOBW9x4sXgI",
+            "function": {
+              "arguments": "{\"expression\": \"37203 / 758.6\"}",
+              "name": "calculate"
+            },
+            "type": "function"
+          }
+        ]
+      },
+      {
+        "role": "tool",
+        "tool_call_id": "call_KYmO8rW62zh3gKMR9ssPG2Bp",
+        "content": "{\"expression\": \"44675 / 921.4\", \"result\": 48.4859995659}"
+      },
+      {
+        "role": "tool",
+        "tool_call_id": "call_njJ79iPgZ5Z3jSOBW9x4sXgI",
+        "content": "{\"expression\": \"37203 / 758.6\", \"result\": 49.0416556815}"
+      },
+      {
+        "role": "assistant",
+        "annotations": [],
+        "tool_calls": [
+          {
+            "id": "call_9mUUdSDuuhS72znavS9nj914",
+            "function": {
+              "arguments": "{\"expression\":\"37203 / 758.6 - 44675 / 921.4\"}",
+              "name": "calculate"
+            },
+            "type": "function"
+          }
+        ]
+      },
+      {
+        "role": "tool",
+        "tool_call_id": "call_9mUUdSDuuhS72znavS9nj914",
+        "content": "{\"expression\": \"37203 / 758.6 - 44675 / 921.4\", \"result\": 0.5556561156}"
+      },
+      {
+        "content": "Millbrook has the higher population density by 0.556 residents per square kilometre.\n\nANSWER: Millbrook | 0.556",
+        "role": "assistant",
+        "annotations": []
+      }
+    ]
+  }
+}

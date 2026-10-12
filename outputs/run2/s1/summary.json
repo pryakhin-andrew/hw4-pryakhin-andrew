@@ -1,0 +1,306 @@
+{
+  "strategy": "S1 direct",
+  "settings": {
+    "model": "gpt-5.6-luna",
+    "temperature": 1,
+    "reasoning_effort": "none",
+    "samples": 1,
+    "max_rounds": null,
+    "lookup_description": null,
+    "workers": 4
+  },
+  "questions": 20,
+  "correct": 4,
+  "unanswered": 0,
+  "calls": 20,
+  "input_tokens": 44280,
+  "cached_tokens": 44220,
+  "output_tokens": 506,
+  "reasoning_tokens": 0,
+  "cost_usd": 0.001504,
+  "median_seconds": 1.284,
+  "total_seconds": 25.805,
+  "wall_seconds": 6.76,
+  "per_question": [
+    {
+      "id": "Q-01",
+      "correct": false,
+      "unanswered": false,
+      "answer": {
+        "name": "ossford",
+        "number": 0.603
+      },
+      "seconds": 1.374,
+      "input_tokens": 2208,
+      "output_tokens": 31,
+      "model_calls": 1,
+      "tool_calls": 0
+    },
+    {
+      "id": "Q-02",
+      "correct": false,
+      "unanswered": false,
+      "answer": {
+        "name": "harrowfield",
+        "number": 1.223
+      },
+      "seconds": 1.316,
+      "input_tokens": 2214,
+      "output_tokens": 26,
+      "model_calls": 1,
+      "tool_calls": 0
+    },
+    {
+      "id": "Q-03",
+      "correct": false,
+      "unanswered": false,
+      "answer": {
+        "name": "lindenmoor",
+        "number": 0.616
+      },
+      "seconds": 1.315,
+      "input_tokens": 2214,
+      "output_tokens": 31,
+      "model_calls": 1,
+      "tool_calls": 0
+    },
+    {
+      "id": "Q-04",
+      "correct": false,
+      "unanswered": false,
+      "answer": {
+        "name": "ashgrove",
+        "number": 4.846
+      },
+      "seconds": 1.667,
+      "input_tokens": 2209,
+      "output_tokens": 13,
+      "model_calls": 1,
+      "tool_calls": 0
+    },
+    {
+      "id": "Q-05",
+      "correct": false,
+      "unanswered": false,
+      "answer": {
+        "name": "stonecairn",
+        "number": 176.728
+      },
+      "seconds": 1.234,
+      "input_tokens": 2210,
+      "output_tokens": 14,
+      "model_calls": 1,
+      "tool_calls": 0
+    },
+    {
+      "id": "Q-06",
+      "correct": false,
+      "unanswered": false,
+      "answer": {
+        "name": "yes",
+        "number": 44069.0
+      },
+      "seconds": 1.782,
+      "input_tokens": 2214,
+      "output_tokens": 19,
+      "model_calls": 1,
+      "tool_calls": 0
+    },
+    {
+      "id": "Q-07",
+      "correct": false,
+      "unanswered": false,
+      "answer": {
+        "name": "coldharbour",
+        "number": 16.19
+      },
+      "seconds": 1.455,
+      "input_tokens": 2218,
+      "output_tokens": 40,
+      "model_calls": 1,
+      "tool_calls": 0
+    },
+    {
+      "id": "Q-08",
+      "correct": false,
+      "unanswered": false,
+      "answer": {
+        "name": "brightwater",
+        "number": 72.361
+      },
+      "seconds": 1.39,
+      "input_tokens": 2216,
+      "output_tokens": 25,
+      "model_calls": 1,
+      "tool_calls": 0
+    },
+    {
+      "id": "Q-09",
+      "correct": false,
+      "unanswered": false,
+      "answer": {
+        "name": "brightwater",
+        "number": 0.958
+      },
+      "seconds": 1.148,
+      "input_tokens": 2208,
+      "output_tokens": 30,
+      "model_calls": 1,
+      "tool_calls": 0
+    },
+    {
+      "id": "Q-10",
+      "correct": true,
+      "unanswered": false,
+      "answer": {
+        "name": "stonecairn",
+        "number": 8.0
+      },
+      "seconds": 1.257,
+      "input_tokens": 2205,
+      "output_tokens": 14,
+      "model_calls": 1,
+      "tool_calls": 0
+    },
+    {
+      "id": "Q-11",
+      "correct": false,
+      "unanswered": false,
+      "answer": {
+        "name": "millbrook",
+        "number": 108.492
+      },
+      "seconds": 1.242,
+      "input_tokens": 2223,
+      "output_tokens": 37,
+      "model_calls": 1,
+      "tool_calls": 0
+    },
+    {
+      "id": "Q-12",
+      "correct": false,
+      "unanswered": false,
+      "answer": {
+        "name": "harrowfield",
+        "number": 0.454
+      },
+      "seconds": 1.146,
+      "input_tokens": 2211,
+      "output_tokens": 28,
+      "model_calls": 1,
+      "tool_calls": 0
+    },
+    {
+      "id": "Q-13",
+      "correct": true,
+      "unanswered": false,
+      "answer": {
+        "name": "coldharbour",
+        "number": 4.159
+      },
+      "seconds": 0.964,
+      "input_tokens": 2219,
+      "output_tokens": 14,
+      "model_calls": 1,
+      "tool_calls": 0
+    },
+    {
+      "id": "Q-14",
+      "correct": false,
+      "unanswered": false,
+      "answer": {
+        "name": "tarnvale",
+        "number": 0.021
+      },
+      "seconds": 1.223,
+      "input_tokens": 2214,
+      "output_tokens": 27,
+      "model_calls": 1,
+      "tool_calls": 0
+    },
+    {
+      "id": "Q-15",
+      "correct": false,
+      "unanswered": false,
+      "answer": {
+        "name": "kelmarsh",
+        "number": 14.001
+      },
+      "seconds": 1.125,
+      "input_tokens": 2209,
+      "output_tokens": 13,
+      "model_calls": 1,
+      "tool_calls": 0
+    },
+    {
+      "id": "Q-16",
+      "correct": true,
+      "unanswered": false,
+      "answer": {
+        "name": "yes",
+        "number": 23.9
+      },
+      "seconds": 0.877,
+      "input_tokens": 2208,
+      "output_tokens": 11,
+      "model_calls": 1,
+      "tool_calls": 0
+    },
+    {
+      "id": "Q-17",
+      "correct": false,
+      "unanswered": false,
+      "answer": {
+        "name": "harrowfield",
+        "number": 16.71
+      },
+      "seconds": 1.347,
+      "input_tokens": 2220,
+      "output_tokens": 30,
+      "model_calls": 1,
+      "tool_calls": 0
+    },
+    {
+      "id": "Q-18",
+      "correct": true,
+      "unanswered": false,
+      "answer": {
+        "name": "yes",
+        "number": 40014.0
+      },
+      "seconds": 1.31,
+      "input_tokens": 2231,
+      "output_tokens": 25,
+      "model_calls": 1,
+      "tool_calls": 0
+    },
+    {
+      "id": "Q-19",
+      "correct": false,
+      "unanswered": false,
+      "answer": {
+        "name": "redfen",
+        "number": 0.046
+      },
+      "seconds": 1.251,
+      "input_tokens": 2208,
+      "output_tokens": 30,
+      "model_calls": 1,
+      "tool_calls": 0
+    },
+    {
+      "id": "Q-20",
+      "correct": false,
+      "unanswered": false,
+      "answer": {
+        "name": "harrowfield",
+        "number": 32411.994
+      },
+      "seconds": 1.382,
+      "input_tokens": 2221,
+      "output_tokens": 48,
+      "model_calls": 1,
+      "tool_calls": 0
+    }
+  ]
+}

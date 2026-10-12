@@ -1,0 +1,238 @@
+{
+  "id": "Q-04",
+  "question": "Which district has more pupils per school in 2025/26, Ashgrove or Millbrook, and by how many pupils per school?",
+  "expected": {
+    "answer": "Millbrook",
+    "value": 2.59,
+    "decimals": 2
+  },
+  "answer": {
+    "name": "millbrook",
+    "number": 2.592
+  },
+  "correct": true,
+  "unanswered": false,
+  "hit_round_limit": false,
+  "seconds": 4.13,
+  "usage": {
+    "calls": 3,
+    "input_tokens": 2860,
+    "cached_tokens": 2203,
+    "output_tokens": 172,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.000382
+  },
+  "final_text": "Millbrook has more pupils per school by 2.592 pupils per school.\n\nANSWER: Millbrook | 2.592",
+  "trace": {
+    "rounds": [
+      {
+        "round": 1,
+        "tool_calls": 4,
+        "usage": {
+          "calls": 1,
+          "input_tokens": 651,
+          "cached_tokens": 0,
+          "output_tokens": 117,
+          "reasoning_tokens": 0,
+          "cost_usd": 0.000271
+        },
+        "model_seconds": 2.029
+      },
+      {
+        "round": 2,
+        "tool_calls": 1,
+        "usage": {
+          "calls": 1,
+          "input_tokens": 1072,
+          "cached_tokens": 1069,
+          "output_tokens": 27,
+          "reasoning_tokens": 0,
+          "cost_usd": 5.4e-05
+        },
+        "model_seconds": 1.056
+      },
+      {
+        "round": 3,
+        "tool_calls": 0,
+        "usage": {
+          "calls": 1,
+          "input_tokens": 1137,
+          "cached_tokens": 1134,
+          "output_tokens": 28,
+          "reasoning_tokens": 0,
+          "cost_usd": 5.7e-05
+        },
+        "model_seconds": 1.044
+      }
+    ],
+    "tool_calls": [
+      {
+        "round": 1,
+        "id": "call_zh53Vsb0hmEviPuEiqzPEJG4",
+        "name": "lookup",
+        "arguments": "{\"district\": \"Ashgrove\", \"field\": \"pupils\", \"year\": 2025}",
+        "result": {
+          "district": "Ashgrove",
+          "field": "pupils",
+          "year": 2025,
+          "value": 8837,
+          "unit": "pupils",
+          "source": "NR-10",
+          "evidence": "There are 24 schools in the district, attended by 8,837 pupils in 2025/26."
+        },
+        "seconds": 0.000505
+      },
+      {
+        "round": 1,
+        "id": "call_DKlGKCS8F18jiDy5NawihP8u",
+        "name": "lookup",
+        "arguments": "{\"district\": \"Ashgrove\", \"field\": \"schools\", \"year\": 2025}",
+        "result": {
+          "district": "Ashgrove",
+          "field": "schools",
+          "year": 2025,
+          "value": 24,
+          "unit": "schools",
+          "source": "NR-10",
+          "evidence": "There are 24 schools in the district, attended by 8,837 pupils in 2025/26."
+        },
+        "seconds": 0.00028
+      },
+      {
+        "round": 1,
+        "id": "call_H8zk5iVktGSv0KyIHQdYW6sB",
+        "name": "lookup",
+        "arguments": "{\"district\": \"Millbrook\", \"field\": \"pupils\", \"year\": 2025}",
+        "result": {
+          "district": "Millbrook",
+          "field": "pupils",
+          "year": 2025,
+          "value": 5562,
+          "unit": "pupils",
+          "source": "NR-11",
+          "evidence": "Millbrook has 15 schools, which enrolled 5,562 pupils for the 2025/26 school year."
+        },
+        "seconds": 0.000128
+      },
+      {
+        "round": 1,
+        "id": "call_cfpe0w5pb84pRM6ubXQGqilJ",
+        "name": "lookup",
+        "arguments": "{\"district\": \"Millbrook\", \"field\": \"schools\", \"year\": 2025}",
+        "result": {
+          "district": "Millbrook",
+          "field": "schools",
+          "year": 2025,
+          "value": 15,
+          "unit": "schools",
+          "source": "NR-11",
+          "evidence": "Millbrook has 15 schools, which enrolled 5,562 pupils for the 2025/26 school year."
+        },
+        "seconds": 0.000122
+      },
+      {
+        "round": 2,
+        "id": "call_p2x6epXbypAFAI4tP6PlKoRK",
+        "name": "calculate",
+        "arguments": "{\"expression\":\"8837 / 24 - 5562 / 15\"}",
+        "result": {
+          "expression": "8837 / 24 - 5562 / 15",
+          "result": -2.5916666667
+        },
+        "seconds": 6.5e-05
+      }
+    ],
+    "messages": [
+      {
+        "role": "system",
+        "content": "You answer questions about the Nine Rivers Region, a fictional region. Use only the information you are given.\n\nYou do not have the documents. Use the lookup tool to get every fact and the calculate tool for every calculation.\n\nEnd your reply with exactly one line in this format:\nANSWER: <district name or yes/no> | <number>\nUse only the district name, or yes/no for a yes/no question. Write the number without units or thousands separators, with at least 3 decimal places unless it is a whole count."
+      },
+      {
+        "role": "user",
+        "content": "Which district has more pupils per school in 2025/26, Ashgrove or Millbrook, and by how many pupils per school?"
+      },
+      {
+        "role": "assistant",
+        "annotations": [],
+        "tool_calls": [
+          {
+            "id": "call_zh53Vsb0hmEviPuEiqzPEJG4",
+            "function": {
+              "arguments": "{\"district\": \"Ashgrove\", \"field\": \"pupils\", \"year\": 2025}",
+              "name": "lookup"
+            },
+            "type": "function"
+          },
+          {
+            "id": "call_DKlGKCS8F18jiDy5NawihP8u",
+            "function": {
+              "arguments": "{\"district\": \"Ashgrove\", \"field\": \"schools\", \"year\": 2025}",
+              "name": "lookup"
+            },
+            "type": "function"
+          },
+          {
+            "id": "call_H8zk5iVktGSv0KyIHQdYW6sB",
+            "function": {
+              "arguments": "{\"district\": \"Millbrook\", \"field\": \"pupils\", \"year\": 2025}",
+              "name": "lookup"
+            },
+            "type": "function"
+          },
+          {
+            "id": "call_cfpe0w5pb84pRM6ubXQGqilJ",
+            "function": {
+              "arguments": "{\"district\": \"Millbrook\", \"field\": \"schools\", \"year\": 2025}",
+              "name": "lookup"
+            },
+            "type": "function"
+          }
+        ]
+      },
+      {
+        "role": "tool",
+        "tool_call_id": "call_zh53Vsb0hmEviPuEiqzPEJG4",
+        "content": "{\"district\": \"Ashgrove\", \"field\": \"pupils\", \"year\": 2025, \"value\": 8837, \"unit\": \"pupils\", \"source\": \"NR-10\", \"evidence\": \"There are 24 schools in the district, attended by 8,837 pupils in 2025/26.\"}"
+      },
+      {
+        "role": "tool",
+        "tool_call_id": "call_DKlGKCS8F18jiDy5NawihP8u",
+        "content": "{\"district\": \"Ashgrove\", \"field\": \"schools\", \"year\": 2025, \"value\": 24, \"unit\": \"schools\", \"source\": \"NR-10\", \"evidence\": \"There are 24 schools in the district, attended by 8,837 pupils in 2025/26.\"}"
+      },
+      {
+        "role": "tool",
+        "tool_call_id": "call_H8zk5iVktGSv0KyIHQdYW6sB",
+        "content": "{\"district\": \"Millbrook\", \"field\": \"pupils\", \"year\": 2025, \"value\": 5562, \"unit\": \"pupils\", \"source\": \"NR-11\", \"evidence\": \"Millbrook has 15 schools, which enrolled 5,562 pupils for the 2025/26 school year.\"}"
+      },
+      {
+        "role": "tool",
+        "tool_call_id": "call_cfpe0w5pb84pRM6ubXQGqilJ",
+        "content": "{\"district\": \"Millbrook\", \"field\": \"schools\", \"year\": 2025, \"value\": 15, \"unit\": \"schools\", \"source\": \"NR-11\", \"evidence\": \"Millbrook has 15 schools, which enrolled 5,562 pupils for the 2025/26 school year.\"}"
+      },
+      {
+        "role": "assistant",
+        "annotations": [],
+        "tool_calls": [
+          {
+            "id": "call_p2x6epXbypAFAI4tP6PlKoRK",
+            "function": {
+              "arguments": "{\"expression\":\"8837 / 24 - 5562 / 15\"}",
+              "name": "calculate"
+            },
+            "type": "function"
+          }
+        ]
+      },
+      {
+        "role": "tool",
+        "tool_call_id": "call_p2x6epXbypAFAI4tP6PlKoRK",
+        "content": "{\"expression\": \"8837 / 24 - 5562 / 15\", \"result\": -2.5916666667}"
+      },
+      {
+        "content": "Millbrook has more pupils per school by 2.592 pupils per school.\n\nANSWER: Millbrook | 2.592",
+        "role": "assistant",
+        "annotations": []
+      }
+    ]
+  }
+}

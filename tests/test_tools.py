@@ -78,7 +78,7 @@ def test_lookup_water_tariff():
     ("Ossford", "density", 2025),
     ("", "population", 2025),
     (None, "population", 2025),
-    ("x" * 500, "population", 2025),
+    pytest.param("x" * 500, "population", 2025, id="500-character-name"),
     ("Ossford", "population", "2025"),
     ("Ossford", "area_km2", 2020),
 ])
@@ -115,7 +115,7 @@ def test_calculate_refuses_dangerous_input_quickly(expression, capfd):
     ("x + 1", "not allowed"),
     ("'a' * 3", "not allowed"),
     ("1 +", "could not read"),
-    ("1" * 400, "too long"),
+    pytest.param("1" * 400, "too long", id="400-character-expression"),
     ("(-8) ** 0.5", "not a real number"),
 ])
 def test_calculate_returns_errors(expression, message):

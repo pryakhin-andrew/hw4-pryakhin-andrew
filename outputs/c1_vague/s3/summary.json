@@ -1,0 +1,96 @@
+{
+  "strategy": "S3 tools",
+  "settings": {
+    "model": "gpt-5.6-luna",
+    "temperature": 1,
+    "reasoning_effort": "none",
+    "samples": 1,
+    "max_rounds": 10,
+    "lookup_description": "vague",
+    "workers": 4
+  },
+  "questions": 5,
+  "correct": 4,
+  "unanswered": 0,
+  "calls": 18,
+  "input_tokens": 18559,
+  "cached_tokens": 7294,
+  "output_tokens": 1368,
+  "reasoning_tokens": 0,
+  "cost_usd": 0.00404,
+  "median_seconds": 5.559,
+  "total_seconds": 29.556,
+  "wall_seconds": 11.949,
+  "per_question": [
+    {
+      "id": "Q-03",
+      "correct": true,
+      "unanswered": false,
+      "answer": {
+        "name": "lindenmoor",
+        "number": 5.34
+      },
+      "seconds": 6.493,
+      "input_tokens": 3999,
+      "output_tokens": 275,
+      "model_calls": 4,
+      "tool_calls": 7
+    },
+    {
+      "id": "Q-08",
+      "correct": true,
+      "unanswered": false,
+      "answer": {
+        "name": "brightwater",
+        "number": 72.456
+      },
+      "seconds": 5.559,
+      "input_tokens": 3133,
+      "output_tokens": 240,
+      "model_calls": 3,
+      "tool_calls": 7
+    },
+    {
+      "id": "Q-09",
+      "correct": true,
+      "unanswered": false,
+      "answer": {
+        "name": "millbrook",
+        "number": 0.556
+      },
+      "seconds": 5.558,
+      "input_tokens": 3735,
+      "output_tokens": 235,
+      "model_calls": 4,
+      "tool_calls": 7
+    },
+    {
+      "id": "Q-11",
+      "correct": false,
+      "unanswered": false,
+      "answer": {
+        "name": "redfen",
+        "number": 53.508
+      },
+      "seconds": 4.905,
+      "input_tokens": 3043,
+      "output_tokens": 297,
+      "model_calls": 3,
+      "tool_calls": 10
+    },
+    {
+      "id": "Q-17",
+      "correct": true,
+      "unanswered": false,
+      "answer": {
+        "name": "harrowfield",
+        "number": 884.457
+      },
+      "seconds": 7.041,
+      "input_tokens": 4649,
+      "output_tokens": 321,
+      "model_calls": 4,
+      "tool_calls": 9
+    }
+  ]
+}

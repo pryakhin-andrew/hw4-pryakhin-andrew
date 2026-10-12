@@ -1,0 +1,66 @@
+S1 direct -> /Users/kqart/Andrey/Code/Uni/Artificial intelligence/hw4-pryakhin-andrew/outputs/run1/s1
+  Q-03 ✗ {'name': 'lindenmoor', 'number': 0.077} in 1.239s
+  Q-04 ✗ {'name': 'millbrook', 'number': 5.2} in 1.297s
+  Q-01 ✗ {'name': 'ossbridge', 'number': 4.848} in 1.389s
+  Q-02 ✗ {'name': 'harrowfield', 'number': 0.199} in 1.41s
+  Q-05 ✗ {'name': 'stonecairn', 'number': 74.5} in 1.349s
+  Q-08 ✗ {'name': 'millbrook', 'number': 0.099} in 1.201s
+  Q-06 ✗ {'name': 'yes', 'number': 12069.0} in 1.357s
+  Q-07 ✗ {'name': 'stonecairn', 'number': 13.992} in 1.522s
+  Q-11 ✗ {'name': 'ashgrove', 'number': 120.55} in 1.046s
+  Q-10 ✓ {'name': 'stonecairn', 'number': 8.0} in 1.121s
+  Q-09 ✗ {'name': 'brightwater', 'number': 1.265} in 1.182s
+  Q-12 ✗ {'name': 'harrowfield', 'number': 28.392} in 1.301s
+  Q-13 ✓ {'name': 'coldharbour', 'number': 4.159} in 1.25s
+  Q-15 ✗ {'name': 'redfen', 'number': 16.566} in 1.312s
+  Q-14 ✗ {'name': 'tarnvale', 'number': 0.004} in 1.476s
+  Q-16 ✓ {'name': 'yes', 'number': 23.9} in 1.108s
+  Q-17 ✗ {'name': 'harrowfield', 'number': 18.108} in 1.258s
+  Q-19 ✗ {'name': 'redfen', 'number': 0.118} in 1.273s
+  Q-18 ✗ {'name': 'yes', 'number': 39999.178} in 1.467s
+  Q-20 ✗ {'name': 'harrowfield', 'number': 41100.059} in 1.512s
+S1 direct: 3/20 correct, $0.001592
+S2 think and vote -> /Users/kqart/Andrey/Code/Uni/Artificial intelligence/hw4-pryakhin-andrew/outputs/run1/s2
+  Q-04 ✓ {'name': 'millbrook', 'number': 2.592} in 2.009s
+  Q-03 ✓ {'name': 'lindenmoor', 'number': 5.191} in 2.573s
+  Q-02 ✓ {'name': 'harrowfield', 'number': 1.688} in 2.59s
+  Q-01 ✓ {'name': 'ossbridge', 'number': 4.567} in 2.832s
+  Q-05 ✗ {'name': 'coldharbour', 'number': 14237.157} in 2.259s
+  Q-06 ✓ {'name': 'yes', 'number': 14069.0} in 1.894s
+  Q-07 ✗ {'name': 'coldharbour', 'number': 18.473} in 2.108s
+  Q-08 ✓ {'name': 'brightwater', 'number': 72.45615} in 2.904s
+  Q-10 ✓ {'name': 'stonecairn', 'number': 8.0} in 1.515s
+  Q-09 ✓ {'name': 'millbrook', 'number': 0.55} in 2.311s
+  Q-11 ✓ {'name': 'redfen', 'number': 56.1} in 2.5s
+  Q-12 ✗ {'name': 'tarnvale', 'number': 64.845} in 2.471s
+  Q-13 ✓ {'name': 'coldharbour', 'number': 4.159} in 2.295s
+  Q-15 ✓ {'name': 'redfen', 'number': 17.609} in 2.023s
+  Q-14 ✓ {'name': 'ashgrove', 'number': 4.801} in 2.697s
+  Q-17 ✗ {'name': 'harrowfield', 'number': 886.915} in 2.549s
+  Q-19 ✓ {'name': 'lindenmoor', 'number': 0.035} in 1.966s
+  Q-18 ✓ {'name': 'yes', 'number': 40012.764} in 2.279s
+  Q-20 ✗ {'name': 'ashgrove', 'number': 3001.169} in 2.669s
+  Q-16 ✓ {'name': 'yes', 'number': 23.9} in 8.837s
+S2 think and vote: 15/20 correct, $0.023613
+S3 tools -> /Users/kqart/Andrey/Code/Uni/Artificial intelligence/hw4-pryakhin-andrew/outputs/run1/s3
+  Q-04 ✓ {'name': 'millbrook', 'number': 2.592} in 4.315s
+  Q-03 ✓ {'name': 'lindenmoor', 'number': 5.34} in 5.786s
+  Q-01 ✓ {'name': 'ossbridge', 'number': 4.57} in 5.804s
+  Q-02 ✓ {'name': 'harrowfield', 'number': 1.687} in 5.852s
+  Q-06 ✓ {'name': 'yes', 'number': 14069.0} in 4.204s
+  Q-08 ✓ {'name': 'brightwater', 'number': 72.456} in 4.516s
+  Q-05 ✓ {'name': 'coldharbour', 'number': 14235.314} in 6.084s
+  Q-07 ✓ {'name': 'coldharbour', 'number': 18.496} in 5.293s
+  Q-10 ✓ {'name': 'stonecairn', 'number': 8.0} in 4.408s
+  Q-09 ✓ {'name': 'millbrook', 'number': 0.556} in 5.252s
+  Q-11 ✓ {'name': 'redfen', 'number': 56.1} in 6.438s
+  Q-12 ✓ {'name': 'tarnvale', 'number': 64.392} in 5.851s
+  Q-13 ✓ {'name': 'coldharbour', 'number': 4.159} in 5.706s
+  Q-16 ✓ {'name': 'yes', 'number': 23.9} in 4.318s
+  Q-14 ✓ {'name': 'ashgrove', 'number': 4.853} in 6.501s
+  Q-15 ✓ {'name': 'redfen', 'number': 17.609} in 4.909s
+  Q-17 ✓ {'name': 'harrowfield', 'number': 884.457} in 4.86s
+  Q-18 ✓ {'name': 'yes', 'number': 40013.391} in 4.407s
+  Q-19 ✓ {'name': 'lindenmoor', 'number': 0.035} in 4.78s
+  Q-20 ✓ {'name': 'ashgrove', 'number': 2993.343} in 6.445s
+S3 tools: 20/20 correct, $0.014128

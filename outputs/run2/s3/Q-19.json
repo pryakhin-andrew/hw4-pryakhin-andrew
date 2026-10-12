@@ -1,0 +1,305 @@
+{
+  "id": "Q-19",
+  "question": "Which district has the denser paved road network, Lindenmoor or Redfen, and by how many km of road per square kilometre?",
+  "expected": {
+    "answer": "Lindenmoor",
+    "value": 0.035,
+    "decimals": 3
+  },
+  "answer": {
+    "name": "lindenmoor",
+    "number": 0.035
+  },
+  "correct": true,
+  "unanswered": false,
+  "hit_round_limit": false,
+  "seconds": 6.21,
+  "usage": {
+    "calls": 4,
+    "input_tokens": 4323,
+    "cached_tokens": 2349,
+    "output_tokens": 236,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.000725
+  },
+  "final_text": "Lindenmoor has the denser paved road network by 0.035 km per square kilometre.\n\nANSWER: Lindenmoor | 0.035",
+  "trace": {
+    "rounds": [
+      {
+        "round": 1,
+        "tool_calls": 4,
+        "usage": {
+          "calls": 1,
+          "input_tokens": 650,
+          "cached_tokens": 0,
+          "output_tokens": 109,
+          "reasoning_tokens": 0,
+          "cost_usd": 0.000261
+        },
+        "model_seconds": 1.76
+      },
+      {
+        "round": 2,
+        "tool_calls": 2,
+        "usage": {
+          "calls": 1,
+          "input_tokens": 1116,
+          "cached_tokens": 0,
+          "output_tokens": 60,
+          "reasoning_tokens": 0,
+          "cost_usd": 0.000295
+        },
+        "model_seconds": 1.56
+      },
+      {
+        "round": 3,
+        "tool_calls": 1,
+        "usage": {
+          "calls": 1,
+          "input_tokens": 1239,
+          "cached_tokens": 1113,
+          "output_tokens": 34,
+          "reasoning_tokens": 0,
+          "cost_usd": 8.8e-05
+        },
+        "model_seconds": 1.391
+      },
+      {
+        "round": 4,
+        "tool_calls": 0,
+        "usage": {
+          "calls": 1,
+          "input_tokens": 1318,
+          "cached_tokens": 1236,
+          "output_tokens": 33,
+          "reasoning_tokens": 0,
+          "cost_usd": 8.1e-05
+        },
+        "model_seconds": 1.498
+      }
+    ],
+    "tool_calls": [
+      {
+        "round": 1,
+        "id": "call_VJPmvUSfmlKQtIAZThoycZrk",
+        "name": "lookup",
+        "arguments": "{\"district\": \"Lindenmoor\", \"field\": \"paved_road_km\"}",
+        "result": {
+          "district": "Lindenmoor",
+          "field": "paved_road_km",
+          "year": 2025,
+          "value": 402.3,
+          "unit": "km",
+          "source": "NR-08",
+          "evidence": "The district, founded in 1911, stretches along the Linden over 1,015.7 square kilometres and keeps 402.3 km of paved road."
+        },
+        "seconds": 0.000295
+      },
+      {
+        "round": 1,
+        "id": "call_BHYMWupzlevp4h96LBPTwoBG",
+        "name": "lookup",
+        "arguments": "{\"district\": \"Lindenmoor\", \"field\": \"area_km2\"}",
+        "result": {
+          "district": "Lindenmoor",
+          "field": "area_km2",
+          "year": 2025,
+          "value": 1015.7,
+          "unit": "km2",
+          "source": "NR-08",
+          "evidence": "The district, founded in 1911, stretches along the Linden over 1,015.7 square kilometres and keeps 402.3 km of paved road."
+        },
+        "seconds": 0.000172
+      },
+      {
+        "round": 1,
+        "id": "call_xzAOjVuFfaTOlLq8iTKRZESi",
+        "name": "lookup",
+        "arguments": "{\"district\": \"Redfen\", \"field\": \"paved_road_km\"}",
+        "result": {
+          "district": "Redfen",
+          "field": "paved_road_km",
+          "year": 2025,
+          "value": 244.6,
+          "unit": "km",
+          "source": "NR-09",
+          "evidence": "Its 2025 budget was 3,512.0 million tenge, and it maintains 244.6 km of paved road."
+        },
+        "seconds": 0.000158
+      },
+      {
+        "round": 1,
+        "id": "call_efoeojr9XXqIJisUe0mgSSlE",
+        "name": "lookup",
+        "arguments": "{\"district\": \"Redfen\", \"field\": \"area_km2\"}",
+        "result": {
+          "district": "Redfen",
+          "field": "area_km2",
+          "year": 2025,
+          "value": 677.1,
+          "unit": "km2",
+          "source": "NR-09",
+          "evidence": "The 2025 census counted 20,934 residents, up from 19,288 at the 2020 census, on an area of 677.1 square kilometres."
+        },
+        "seconds": 0.000153
+      },
+      {
+        "round": 2,
+        "id": "call_HA8yNeXVunpMdl7npRjOAoe2",
+        "name": "calculate",
+        "arguments": "{\"expression\": \"402.3 / 1015.7\"}",
+        "result": {
+          "expression": "402.3 / 1015.7",
+          "result": 0.3960815201
+        },
+        "seconds": 9e-05
+      },
+      {
+        "round": 2,
+        "id": "call_WC7DgsiR5GJnjToU8dkC95Mq",
+        "name": "calculate",
+        "arguments": "{\"expression\": \"244.6 / 677.1\"}",
+        "result": {
+          "expression": "244.6 / 677.1",
+          "result": 0.3612464924
+        },
+        "seconds": 3.7e-05
+      },
+      {
+        "round": 3,
+        "id": "call_ddRFH4UDkMIH9cXeBfZcUHRv",
+        "name": "calculate",
+        "arguments": "{\"expression\":\"402.3 / 1015.7 - 244.6 / 677.1\"}",
+        "result": {
+          "expression": "402.3 / 1015.7 - 244.6 / 677.1",
+          "result": 0.0348350277
+        },
+        "seconds": 0.00022
+      }
+    ],
+    "messages": [
+      {
+        "role": "system",
+        "content": "You answer questions about the Nine Rivers Region, a fictional region. Use only the information you are given.\n\nYou do not have the documents. Use the lookup tool to get every fact and the calculate tool for every calculation.\n\nEnd your reply with exactly one line in this format:\nANSWER: <district name or yes/no> | <number>\nUse only the district name, or yes/no for a yes/no question. Write the number without units or thousands separators, with at least 3 decimal places unless it is a whole count."
+      },
+      {
+        "role": "user",
+        "content": "Which district has the denser paved road network, Lindenmoor or Redfen, and by how many km of road per square kilometre?"
+      },
+      {
+        "role": "assistant",
+        "annotations": [],
+        "tool_calls": [
+          {
+            "id": "call_VJPmvUSfmlKQtIAZThoycZrk",
+            "function": {
+              "arguments": "{\"district\": \"Lindenmoor\", \"field\": \"paved_road_km\"}",
+              "name": "lookup"
+            },
+            "type": "function"
+          },
+          {
+            "id": "call_BHYMWupzlevp4h96LBPTwoBG",
+            "function": {
+              "arguments": "{\"district\": \"Lindenmoor\", \"field\": \"area_km2\"}",
+              "name": "lookup"
+            },
+            "type": "function"
+          },
+          {
+            "id": "call_xzAOjVuFfaTOlLq8iTKRZESi",
+            "function": {
+              "arguments": "{\"district\": \"Redfen\", \"field\": \"paved_road_km\"}",
+              "name": "lookup"
+            },
+            "type": "function"
+          },
+          {
+            "id": "call_efoeojr9XXqIJisUe0mgSSlE",
+            "function": {
+              "arguments": "{\"district\": \"Redfen\", \"field\": \"area_km2\"}",
+              "name": "lookup"
+            },
+            "type": "function"
+          }
+        ]
+      },
+      {
+        "role": "tool",
+        "tool_call_id": "call_VJPmvUSfmlKQtIAZThoycZrk",
+        "content": "{\"district\": \"Lindenmoor\", \"field\": \"paved_road_km\", \"year\": 2025, \"value\": 402.3, \"unit\": \"km\", \"source\": \"NR-08\", \"evidence\": \"The district, founded in 1911, stretches along the Linden over 1,015.7 square kilometres and keeps 402.3 km of paved road.\"}"
+      },
+      {
+        "role": "tool",
+        "tool_call_id": "call_BHYMWupzlevp4h96LBPTwoBG",
+        "content": "{\"district\": \"Lindenmoor\", \"field\": \"area_km2\", \"year\": 2025, \"value\": 1015.7, \"unit\": \"km2\", \"source\": \"NR-08\", \"evidence\": \"The district, founded in 1911, stretches along the Linden over 1,015.7 square kilometres and keeps 402.3 km of paved road.\"}"
+      },
+      {
+        "role": "tool",
+        "tool_call_id": "call_xzAOjVuFfaTOlLq8iTKRZESi",
+        "content": "{\"district\": \"Redfen\", \"field\": \"paved_road_km\", \"year\": 2025, \"value\": 244.6, \"unit\": \"km\", \"source\": \"NR-09\", \"evidence\": \"Its 2025 budget was 3,512.0 million tenge, and it maintains 244.6 km of paved road.\"}"
+      },
+      {
+        "role": "tool",
+        "tool_call_id": "call_efoeojr9XXqIJisUe0mgSSlE",
+        "content": "{\"district\": \"Redfen\", \"field\": \"area_km2\", \"year\": 2025, \"value\": 677.1, \"unit\": \"km2\", \"source\": \"NR-09\", \"evidence\": \"The 2025 census counted 20,934 residents, up from 19,288 at the 2020 census, on an area of 677.1 square kilometres.\"}"
+      },
+      {
+        "role": "assistant",
+        "annotations": [],
+        "tool_calls": [
+          {
+            "id": "call_HA8yNeXVunpMdl7npRjOAoe2",
+            "function": {
+              "arguments": "{\"expression\": \"402.3 / 1015.7\"}",
+              "name": "calculate"
+            },
+            "type": "function"
+          },
+          {
+            "id": "call_WC7DgsiR5GJnjToU8dkC95Mq",
+            "function": {
+              "arguments": "{\"expression\": \"244.6 / 677.1\"}",
+              "name": "calculate"
+            },
+            "type": "function"
+          }
+        ]
+      },
+      {
+        "role": "tool",
+        "tool_call_id": "call_HA8yNeXVunpMdl7npRjOAoe2",
+        "content": "{\"expression\": \"402.3 / 1015.7\", \"result\": 0.3960815201}"
+      },
+      {
+        "role": "tool",
+        "tool_call_id": "call_WC7DgsiR5GJnjToU8dkC95Mq",
+        "content": "{\"expression\": \"244.6 / 677.1\", \"result\": 0.3612464924}"
+      },
+      {
+        "role": "assistant",
+        "annotations": [],
+        "tool_calls": [
+          {
+            "id": "call_ddRFH4UDkMIH9cXeBfZcUHRv",
+            "function": {
+              "arguments": "{\"expression\":\"402.3 / 1015.7 - 244.6 / 677.1\"}",
+              "name": "calculate"
+            },
+            "type": "function"
+          }
+        ]
+      },
+      {
+        "role": "tool",
+        "tool_call_id": "call_ddRFH4UDkMIH9cXeBfZcUHRv",
+        "content": "{\"expression\": \"402.3 / 1015.7 - 244.6 / 677.1\", \"result\": 0.0348350277}"
+      },
+      {
+        "content": "Lindenmoor has the denser paved road network by 0.035 km per square kilometre.\n\nANSWER: Lindenmoor | 0.035",
+        "role": "assistant",
+        "annotations": []
+      }
+    ]
+  }
+}
