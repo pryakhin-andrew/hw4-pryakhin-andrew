@@ -1,0 +1,180 @@
+{
+  "id": "Q-18",
+  "question": "If Millbrook's population grows by the same percentage from 2025 to 2030 as it did from 2020 to 2025, will it exceed 40,000 residents in 2030? Give the projected 2030 population.",
+  "expected": {
+    "answer": "yes",
+    "value": 40013,
+    "decimals": 0
+  },
+  "answer": {
+    "name": "yes",
+    "number": 40013.391
+  },
+  "correct": true,
+  "unanswered": false,
+  "hit_round_limit": false,
+  "seconds": 4.316,
+  "usage": {
+    "calls": 3,
+    "input_tokens": 2520,
+    "cached_tokens": 0,
+    "output_tokens": 118,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.000646
+  },
+  "final_text": "Yes. Projected 2030 population: 40,013 residents.\n\nANSWER: yes | 40013.391",
+  "trace": {
+    "rounds": [
+      {
+        "round": 1,
+        "tool_calls": 2,
+        "usage": {
+          "calls": 1,
+          "input_tokens": 673,
+          "cached_tokens": 0,
+          "output_tokens": 65,
+          "reasoning_tokens": 0,
+          "cost_usd": 0.000213
+        },
+        "model_seconds": 1.542
+      },
+      {
+        "round": 2,
+        "tool_calls": 1,
+        "usage": {
+          "calls": 1,
+          "input_tokens": 892,
+          "cached_tokens": 0,
+          "output_tokens": 26,
+          "reasoning_tokens": 0,
+          "cost_usd": 0.00021
+        },
+        "model_seconds": 1.319
+      },
+      {
+        "round": 3,
+        "tool_calls": 0,
+        "usage": {
+          "calls": 1,
+          "input_tokens": 955,
+          "cached_tokens": 0,
+          "output_tokens": 27,
+          "reasoning_tokens": 0,
+          "cost_usd": 0.000223
+        },
+        "model_seconds": 1.453
+      }
+    ],
+    "tool_calls": [
+      {
+        "round": 1,
+        "id": "call_CvR06tShyuUD3P1dLir3DHTx",
+        "name": "lookup",
+        "arguments": "{\"district\": \"Millbrook\", \"field\": \"population\", \"year\": 2020}",
+        "result": {
+          "district": "Millbrook",
+          "field": "population",
+          "year": 2020,
+          "value": 34590,
+          "unit": "residents",
+          "source": "NR-11",
+          "evidence": "Census population: 34,590 in 2020 and 37,203 in 2025."
+        },
+        "seconds": 0.000955
+      },
+      {
+        "round": 1,
+        "id": "call_lwjhMMkWDFMBrvy3FgCACvrt",
+        "name": "lookup",
+        "arguments": "{\"district\": \"Millbrook\", \"field\": \"population\", \"year\": 2025}",
+        "result": {
+          "district": "Millbrook",
+          "field": "population",
+          "year": 2025,
+          "value": 37203,
+          "unit": "residents",
+          "source": "NR-11",
+          "evidence": "Census population: 34,590 in 2020 and 37,203 in 2025."
+        },
+        "seconds": 0.00021
+      },
+      {
+        "round": 2,
+        "id": "call_ZTubI0YhVyPipFQ6oLwaBG6s",
+        "name": "calculate",
+        "arguments": "{\"expression\":\"37203 * (37203 / 34590)\"}",
+        "result": {
+          "expression": "37203 * (37203 / 34590)",
+          "result": 40013.3914137034
+        },
+        "seconds": 0.000243
+      }
+    ],
+    "messages": [
+      {
+        "role": "system",
+        "content": "You answer questions about the Nine Rivers Region, a fictional region. Use only the information you are given.\n\nYou do not have the documents. Use the lookup tool to get every fact and the calculate tool for every calculation.\n\nEnd your reply with exactly one line in this format:\nANSWER: <district name or yes/no> | <number>\nUse only the district name, or yes/no for a yes/no question. Write the number without units or thousands separators, with at least 3 decimal places unless it is a whole count."
+      },
+      {
+        "role": "user",
+        "content": "If Millbrook's population grows by the same percentage from 2025 to 2030 as it did from 2020 to 2025, will it exceed 40,000 residents in 2030? Give the projected 2030 population."
+      },
+      {
+        "role": "assistant",
+        "annotations": [],
+        "tool_calls": [
+          {
+            "id": "call_CvR06tShyuUD3P1dLir3DHTx",
+            "function": {
+              "arguments": "{\"district\": \"Millbrook\", \"field\": \"population\", \"year\": 2020}",
+              "name": "lookup"
+            },
+            "type": "function"
+          },
+          {
+            "id": "call_lwjhMMkWDFMBrvy3FgCACvrt",
+            "function": {
+              "arguments": "{\"district\": \"Millbrook\", \"field\": \"population\", \"year\": 2025}",
+              "name": "lookup"
+            },
+            "type": "function"
+          }
+        ]
+      },
+      {
+        "role": "tool",
+        "tool_call_id": "call_CvR06tShyuUD3P1dLir3DHTx",
+        "content": "{\"district\": \"Millbrook\", \"field\": \"population\", \"year\": 2020, \"value\": 34590, \"unit\": \"residents\", \"source\": \"NR-11\", \"evidence\": \"Census population: 34,590 in 2020 and 37,203 in 2025.\"}"
+      },
+      {
+        "role": "tool",
+        "tool_call_id": "call_lwjhMMkWDFMBrvy3FgCACvrt",
+        "content": "{\"district\": \"Millbrook\", \"field\": \"population\", \"year\": 2025, \"value\": 37203, \"unit\": \"residents\", \"source\": \"NR-11\", \"evidence\": \"Census population: 34,590 in 2020 and 37,203 in 2025.\"}"
+      },
+      {
+        "role": "assistant",
+        "annotations": [],
+        "tool_calls": [
+          {
+            "id": "call_ZTubI0YhVyPipFQ6oLwaBG6s",
+            "function": {
+              "arguments": "{\"expression\":\"37203 * (37203 / 34590)\"}",
+              "name": "calculate"
+            },
+            "type": "function"
+          }
+        ]
+      },
+      {
+        "role": "tool",
+        "tool_call_id": "call_ZTubI0YhVyPipFQ6oLwaBG6s",
+        "content": "{\"expression\": \"37203 * (37203 / 34590)\", \"result\": 40013.3914137034}"
+      },
+      {
+        "content": "Yes. Projected 2030 population: 40,013 residents.\n\nANSWER: yes | 40013.391",
+        "role": "assistant",
+        "annotations": []
+      }
+    ]
+  }
+}

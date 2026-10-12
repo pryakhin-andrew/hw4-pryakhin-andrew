@@ -249,6 +249,16 @@ I also rejected the opposite extreme, one tool per metric (`density(district)`, 
 
 **My rule for a correct answer** (written before the first full run):
 
+The code is in `scoring.py`.
+
+1. Find the **last** line `ANSWER: <name> | <number>` in the model's reply. Markdown stars and backticks are removed first. If there is no such line, or the number cannot be read, the question is **unanswered** and counts as wrong.
+2. **Name:** must equal the `answer` in `questions.json` exactly. I only ignore upper/lower case and extra spaces. "Millbrook district" would be wrong.
+3. **Number:** I round the model's number to the question's `decimals`, then it must be within one step of `value` in the last digit. For example, with `decimals = 1` and `value = 0.6`, any number that rounds to 0.5, 0.6 or 0.7 is correct.
+4. In **S3**, if the loop hits the round limit, the question is unanswered.
+5. In **S2**, each of the 5 samples is parsed with step 1. The vote is on the pair (name, number rounded to `decimals`). The most common pair wins. If two pairs have the same count, the one that appeared first wins. Samples without an answer line do not vote. If no sample has an answer line, the question is unanswered.
+
+The model never sees `answer`, `value` or `sources`. `run.py` gives a strategy only `id`, `question` and `decimals`, and `decimals` is only used to group S2 votes.
+
 | Run | Strategy | Correct /20 | Unanswered | Input tokens | Output tokens | Median seconds per question | Total seconds | Cost ($) |
 |---|---|---:|---:|---:|---:|---:|---:|---:|
 | 1 | S1 direct | | | | | | | |

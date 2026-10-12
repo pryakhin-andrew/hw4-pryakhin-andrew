@@ -1,0 +1,68 @@
+{
+  "strategy": "S1 direct",
+  "settings": {
+    "model": "gpt-5.6-luna",
+    "temperature": 1,
+    "reasoning_effort": "none",
+    "samples": 1,
+    "max_rounds": null,
+    "lookup_description": null,
+    "workers": 4
+  },
+  "questions": 3,
+  "correct": 0,
+  "unanswered": 0,
+  "calls": 3,
+  "input_tokens": 6653,
+  "cached_tokens": 4346,
+  "output_tokens": 37,
+  "reasoning_tokens": 0,
+  "cost_usd": 0.000593,
+  "median_seconds": 1.314,
+  "total_seconds": 4.191,
+  "wall_seconds": 1.597,
+  "per_question": [
+    {
+      "id": "Q-03",
+      "correct": false,
+      "unanswered": false,
+      "answer": {
+        "name": "lindenmoor",
+        "number": 0.002
+      },
+      "seconds": 1.314,
+      "input_tokens": 2214,
+      "output_tokens": 13,
+      "model_calls": 1,
+      "tool_calls": 0
+    },
+    {
+      "id": "Q-09",
+      "correct": false,
+      "unanswered": false,
+      "answer": {
+        "name": "brightwater",
+        "number": 0.732
+      },
+      "seconds": 1.595,
+      "input_tokens": 2208,
+      "output_tokens": 12,
+      "model_calls": 1,
+      "tool_calls": 0
+    },
+    {
+      "id": "Q-18",
+      "correct": false,
+      "unanswered": false,
+      "answer": {
+        "name": "yes",
+        "number": 39999.0
+      },
+      "seconds": 1.282,
+      "input_tokens": 2231,
+      "output_tokens": 12,
+      "model_calls": 1,
+      "tool_calls": 0
+    }
+  ]
+}
